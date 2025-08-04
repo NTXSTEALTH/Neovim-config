@@ -1,0 +1,72 @@
+return {
+
+    -- WebDev support [ HTML, CSS, JS, Tailwind, React]
+    {
+        "roobert/tailwindcss-colorizer-cmp.nvim",
+        config = function()
+            require("tailwindcss-colorizer-cmp").setup({
+                color_square_width = 2,
+            })
+        end,
+    },
+    {
+        "cjodo/convert.nvim",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+        },
+        keys = {
+            { "<leader>cn", "<cmd>ConvertFindNext<CR>",    desc = "Find next convertable unit" },
+            { "<leader>cc", "<cmd>ConvertFindCurrent<CR>", desc = "Find convertable unit in current line" },
+            -- Add "v" to enable converting a selected region
+            {
+                "<leader>ca",
+                "<cmd>ConvertAll<CR>",
+                mode = { "n", "v" },
+                desc = "Convert all of a specified unit",
+            },
+        },
+    },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        main = "ibl",
+        ---@module "ibl"
+        ---@type ibl.config
+        opts = {},
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        config = function()
+            require("nvim-ts-autotag").setup({
+                opts = {
+                    -- Defaults
+                    enable_close = true,           -- Auto close tags
+                    enable_rename = true,          -- Auto rename pairs of tags
+                    enable_close_on_slash = false, -- Auto close on trailing </
+                },
+                -- Also override individual filetype configs, these take priority.
+                -- Empty by default, useful if one of the "opts" global settings
+                -- doesn't work well in a specific filetype
+                per_filetype = {
+                    ["html"] = {
+                        enable_close = false,
+                    },
+                },
+            })
+        end,
+    },
+    {
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
+        opts = { -- set to setup table
+            tailwind = true,
+        },
+    },
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        ---@module 'render-markdown'
+        ---@type render.md.UserConfig
+        opts = {},
+    },
+}
