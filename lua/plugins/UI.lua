@@ -28,6 +28,14 @@ return {
                 -- List of the Themes.
                 'folke/tokyonight.nvim',
                 "catppuccin/nvim",
+                "kepano/flexoki",
+                "bluz71/vim-moonfly-colors",
+                "olimorris/onedarkpro.nvim",
+                "bluz71/vim-nightfly-colors",
+                "rebelot/kanagawa.nvim",
+                "ellisonleao/gruvbox.nvim",
+                "olivercederborg/poimandres.nvim",
+                "uloco/bluloco.nvim",
                 'default'
             })
         end
@@ -83,41 +91,29 @@ return {
             local wk = require("which-key")
             wk.setup(opts)
             wk.add({
-                { "<leader>l", icon = "󰒲" },
-                { "<leader>e", icon = "" },
-                { "<leader>/", icon = "󱁴" },
-                { "<leader>f", group = "File", icon = "" },
-                { "<leader><leader>", icon = "" },
-                { "<leader>fp", icon = "" },
-                { "<leader>fr", icon = "" },
-                { "<leader>g", group = "Git" },
-                { "<leader>gl", icon = "󱀄" },
-                { "<leader>gs", icon = "󰩮" },
-                { "<leader>gb", icon = "" },
-                { "<leader>gS", icon = "" },
-                { "<leader>s", group = "Utils", icon = "󰙠" },
-                { "<leader>d", group = "Debugger" },
-                { "<leader>u", group = "UI" },
-                { "<leader>c", group = "Code" },
-                { "<leader>cr", icon = "" },
-                { "<leader>cc", icon = "" },
-                { "<leader>cf", icon = "" },
-                { "<leader>p", group = "Python", icon = "󰌠" },
-                { "m", group = "Mini", icon = "󰘨" },
-                { "<leader>b", group = "Tabs", icon = "" },
-                { "<leader>o", group = "File options", icon = "󰲌" },
-                { "<leader>w", icon = "" },
+                { "<leader>l", icon = "󰒲" }, -- NOTE: Lazy GUI
+                { "<leader>e", icon = "" }, -- NOTE: Neo Tree GUI
+                { "<leader>/", icon = "󱁴" }, -- NOTE: File GREP GUI
+                { "<leader>f", group = "File", icon = "" }, -- NOTE: File GUI
+                { "<leader><leader>", icon = "" }, -- NOTE: Find File GUI
+                { "<leader>fp", icon = "" }, -- NOTE: Find Project GUI
+                { "<leader>fr", icon = "" }, -- NOTE: Find Recent GUI
+                { "<leader>g", group = "Git" }, -- NOTE: Git GUI
+                { "<leader>gl", icon = "󱀄" }, -- NOTE: Git Log GUI
+                { "<leader>gs", icon = "󰩮" }, -- NOTE: Git Status GUI
+                { "<leader>gb", icon = "" }, -- NOTE: Git Branch GUI
+                { "<leader>gS", icon = "" }, -- NOTE: Git Stash GUI
+                { "<leader>s", group = "Utils", icon = "󰙠" }, --NOTE: Utils GUI
+                { "<leader>u", group = "UI" }, -- NOTE: UI Options GUI
+                { "<leader>c", group = "Code" }, -- NOTE: Code Options GUI
+                { "<leader>cr", icon = "" }, -- NOTE: Run Code
+                { "<leader>cc", icon = "" }, -- NOTE: Toggle Codium
+                { "<leader>cf", icon = "" }, -- NOTE: Run File
+                { "m", group = "Mini", icon = "󰘨" }, -- NOTE: Mini Options
+                { "<leader>b", group = "Tabs", icon = "" }, -- NOTE: Tabs
+                { "<leader>w", icon = "" }, --NOTE: Save File
             })
         end,
-        keys = {
-            {
-                "<leader>?",
-                function()
-                    require("which-key").show({ global = false })
-                end,
-                desc = "Buffer Local Keymaps (which-key)",
-            },
-        },
     },
     {
         "folke/noice.nvim",
@@ -193,6 +189,5 @@ return {
                 desc = "Quickfix List (Trouble)",
             },
         },
-    }
-
+    },
 }

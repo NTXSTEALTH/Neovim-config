@@ -3,11 +3,24 @@ return {
     {
         "mason-org/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = { "lua_ls", "rust_analyzer", "basedpyright", "ruff", "clangd" },
+            ensure_installed = {
+                "basedpyright",
+                "clangd",
+                "emmet_language_server",
+                -- "eslintd",
+                -- "prettierd",
+                "lua_ls",
+                "ruff",
+                "rust_analyzer",
+                "ts_ls",
+            },
         },
         dependencies = {
-            { "mason-org/mason.nvim", opts = {} },
-            "neovim/nvim-lspconfig",
+            {
+                "mason-org/mason.nvim",
+                opts = {}
+            },
+            { "neovim/nvim-lspconfig", }
         },
 
     },
@@ -48,11 +61,9 @@ return {
                 json = { "prettierd" },
                 css = { "prettierd" },
                 scss = { "prettierd" },
-                less = { "prettierd" },
                 html = { "prettierd" },
                 yaml = { "prettierd" },
                 markdown = { "prettierd" },
-                graphql = { "prettierd" },
             },
             format_on_save = {
                 timeout_ms = 500,

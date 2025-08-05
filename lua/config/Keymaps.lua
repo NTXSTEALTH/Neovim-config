@@ -1,11 +1,15 @@
--- NOTE: This file houses all the custom / overridden keybinds.
+--PERF: This file houses all the custom / overridden keybinds.
 
 
 -- Open lazy GUI
 vim.keymap.set("n", "<leader>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 
--- Toggle NEO Tree
-vim.keymap.set("n", "<leader>e", "<cmd>:Neotree toggle<cr>", { desc = "toggle neotree" })
+-- Open Themify GUI
+vim.keymap.set("n", "<leader>ut", "<CMD>:Themify<CR>", { desc = "Open Themify GUI" })
+
+-- Toggle File Tree
+-- vim.keymap.set("n", "<leader>e", "<cmd>:Neotree toggle<cr>", { desc = "toggle neotree" })
+vim.keymap.set("n", "<leader>e", "<cmd>:lua Snacks.explorer()<cr>", { desc = "toggle neotree" })
 
 -- Save file
 vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
@@ -50,5 +54,5 @@ vim.keymap.set("n", "<leader>cx", vim.lsp.buf.rename, { desc = "Rename" })
 -- Telescope binds
 vim.keymap.set("n", "<leader><leader>", "<CMD>Telescope find_files<CR>", { desc = "Run File" })
 
--- Codium binds
+-- Codium AI binds
 vim.keymap.set("n", "<leader>cc", "<CMD>Codeium Toggle<CR>", { desc = "Toggle Codium" })
