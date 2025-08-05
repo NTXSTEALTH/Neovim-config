@@ -92,7 +92,7 @@ return {
             wk.setup(opts)
             wk.add({
                 { "<leader>l", icon = "󰒲" }, -- NOTE: Lazy GUI
-                { "<leader>x", icon = "" }, -- NOTE: Lazy GUI
+                { "<leader>x", group = "Diagnostics", icon = "" }, -- NOTE: trouble GUI
                 { "<leader>e", icon = "" }, -- NOTE: Neo Tree GUI
                 { "<leader>/", icon = "󱁴" }, -- NOTE: File GREP GUI
                 { "<leader>f", group = "File", icon = "" }, -- NOTE: File GUI
