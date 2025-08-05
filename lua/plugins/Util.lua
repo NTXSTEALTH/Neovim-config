@@ -6,6 +6,7 @@ return {
     -- Code Runner Config
     {
         "CRAG666/code_runner.nvim",
+        event = "VeryLazy",
         cmd = "RunCode",
         config = function()
             require("code_runner").setup({
@@ -30,6 +31,7 @@ return {
     {
         "akinsho/toggleterm.nvim",
         cmd = "ToggleTerm",
+        event = "VeryLazy",
         opts = { --[[ things you want to change go here]]
             shell = "C:\\Users\\rohit\\AppData\\Local\\Programs\\nu\\bin\\nu.exe",
             vim.api.nvim_set_keymap(

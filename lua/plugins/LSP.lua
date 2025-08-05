@@ -1,5 +1,4 @@
 return {
-
     {
         "mason-org/mason-lspconfig.nvim",
         opts = {
@@ -20,8 +19,32 @@ return {
                 "mason-org/mason.nvim",
                 opts = {}
             },
-            { "neovim/nvim-lspconfig", }
         },
+
+    },
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            local lspconfig = require("lspconfig")
+            lspconfig.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        workspace = {
+                            checkThirdParty = false,
+                            maxPreload = 100,
+                            preloadFileSize = 500,
+                            ignoreDir = {
+                                "some_folder_to_ignore",
+                                "another_folder"
+                            },
+                        },
+                        telemetry = {
+                            enable = false,
+                        },
+                    },
+                },
+            })
+        end
 
     },
     {

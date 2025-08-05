@@ -92,6 +92,7 @@ return {
             wk.setup(opts)
             wk.add({
                 { "<leader>l", icon = "󰒲" }, -- NOTE: Lazy GUI
+                { "<leader>x", icon = "" }, -- NOTE: Lazy GUI
                 { "<leader>e", icon = "" }, -- NOTE: Neo Tree GUI
                 { "<leader>/", icon = "󱁴" }, -- NOTE: File GREP GUI
                 { "<leader>f", group = "File", icon = "" }, -- NOTE: File GUI
@@ -110,8 +111,25 @@ return {
                 { "<leader>cc", icon = "" }, -- NOTE: Toggle Codium
                 { "<leader>cf", icon = "" }, -- NOTE: Run File
                 { "m", group = "Mini", icon = "󰘨" }, -- NOTE: Mini Options
-                { "<leader>b", group = "Tabs", icon = "" }, -- NOTE: Tabs
                 { "<leader>w", icon = "" }, --NOTE: Save File
+
+                { "<leader>b", group = "Tabs", icon = "" }, -- NOTE: Tabs
+                { "<leader>bc", icon = "󰛉" }, --NOTE: Close Tab
+                { "<leader>br", icon = "󰦛" }, --NOTE: Restore Tab
+                { "<leader>bb", icon = "" }, --NOTE: Prev Tab
+                { "<leader>bn", icon = "" }, --NOTE: Next Tab
+                { "<leader>bB", icon = "" }, --NOTE: Move Tab Right
+                { "<leader>bN", icon = "" }, --NOTE: Move Tab Left
+
+                { "<leader>b1", icon = "" },
+                { "<leader>b2", icon = "" },
+                { "<leader>b3", icon = "" },
+                { "<leader>b4", icon = "" },
+                { "<leader>b5", icon = "" },
+                { "<leader>b6", icon = "" },
+                { "<leader>b7", icon = "" },
+                { "<leader>b8", icon = "" },
+                { "<leader>b9", icon = "" },
             })
         end,
     },

@@ -2,5 +2,5 @@
 require("config.lazy")
 
 -- NOTE: These are the custom config files.
-require("config.options")
-require("config.keymaps")
+require("config.Options")
+require("config.Keymaps")

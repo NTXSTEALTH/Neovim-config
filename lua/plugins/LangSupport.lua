@@ -1,8 +1,9 @@
 return {
 
-    -- WebDev support [ HTML, CSS, JS, Tailwind, React]
+    -- NOTE: WebDev support [ HTML, CSS, JS, Tailwind, React]
     {
         "roobert/tailwindcss-colorizer-cmp.nvim",
+        event = "VeryLazy",
         config = function()
             require("tailwindcss-colorizer-cmp").setup({
                 color_square_width = 2,
@@ -11,13 +12,13 @@ return {
     },
     {
         "cjodo/convert.nvim",
+        event = "VeryLazy",
         dependencies = {
             "MunifTanjim/nui.nvim",
         },
         keys = {
             { "<leader>cn", "<cmd>ConvertFindNext<CR>",    desc = "Find next convertable unit" },
             { "<leader>cc", "<cmd>ConvertFindCurrent<CR>", desc = "Find convertable unit in current line" },
-            -- Add "v" to enable converting a selected region
             {
                 "<leader>ca",
                 "<cmd>ConvertAll<CR>",
@@ -35,17 +36,14 @@ return {
     },
     {
         "windwp/nvim-ts-autotag",
+        event = "VeryLazy",
         config = function()
             require("nvim-ts-autotag").setup({
                 opts = {
-                    -- Defaults
-                    enable_close = true,           -- Auto close tags
-                    enable_rename = true,          -- Auto rename pairs of tags
-                    enable_close_on_slash = false, -- Auto close on trailing </
+                    enable_close = true,          -- Auto close tags
+                    enable_rename = true,         -- Auto rename pairs of tags
+                    enable_close_on_slash = true, -- Auto close on trailing </
                 },
-                -- Also override individual filetype configs, these take priority.
-                -- Empty by default, useful if one of the "opts" global settings
-                -- doesn't work well in a specific filetype
                 per_filetype = {
                     ["html"] = {
                         enable_close = false,
