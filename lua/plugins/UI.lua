@@ -96,6 +96,7 @@ return {
                 { "<leader>e", icon = "" }, -- NOTE: Neo Tree GUI
                 { "<leader>/", icon = "󱁴" }, -- NOTE: File GREP GUI
                 { "<leader>f", group = "File", icon = "" }, -- NOTE: File GUI
+                { "<leader>fs", icon = "󰑓" }, -- NOTE: Find File GUI
                 { "<leader><leader>", icon = "" }, -- NOTE: Find File GUI
                 { "<leader>fp", icon = "" }, -- NOTE: Find Project GUI
                 { "<leader>fr", icon = "" }, -- NOTE: Find Recent GUI

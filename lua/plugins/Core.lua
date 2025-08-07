@@ -1,10 +1,19 @@
 return {
     {
-        -- NOTE: This is a core plugins for syntax highlighting.
+        -- NOTE: Core plugins for syntax highlighting.
         "nvim-treesitter/nvim-treesitter",
         branch = 'master',
         lazy = false,
-        build = ":TSUpdate"
+        build = ":TSUpdate",
+
+        ensure_installed = { "lua", "markdown", "markdown_inline", "Python", "html", "css", "javascript", "typescript", "json", "c", "cpp" },
+        config = function()
+            require 'nvim-treesitter.configs'.setup {
+                highlight = {
+                    enable = true,
+                },
+            }
+        end
     },
 
     {

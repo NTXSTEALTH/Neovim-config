@@ -1,9 +1,9 @@
--- NOTE: Contains config's for
+-- PERF: Contains config's for
 -- - Code Runner
 -- - ToggleTerm
 
 return {
-    -- Code Runner Config
+    -- NOTE: Code Runner Config
     {
         "CRAG666/code_runner.nvim",
         event = "VeryLazy",
@@ -22,12 +22,17 @@ return {
                         "gcc $fileName -o $fileNameWithoutExt.exe ;",
                         "./$fileNameWithoutExt.exe",
                     },
+                    cpp = {
+                        "cd $dir ;",
+                        "g++ $fileName -o $fileNameWithoutExt.exe ;",
+                        "./$fileNameWithoutExt.exe",
+                    },
                 },
             })
         end,
     },
 
-    -- Toggle term Config
+    -- NOTE: Toggle term Config
     {
         "akinsho/toggleterm.nvim",
         cmd = "ToggleTerm",
@@ -56,4 +61,18 @@ return {
             -- refer to the configuration section below
         },
     },
+
+    -- NOTE: Auto Session Config
+    -- {
+    --     "rmagatti/auto-session",
+    --     lazy = false,
+    --
+    --     ---enables autocomplete for opts
+    --     ---@module "auto-session"
+    --     ---@type AutoSession.Config
+    --     opts = {
+    --         suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+    --         -- log_level = 'debug',
+    --     },
+    -- }
 }

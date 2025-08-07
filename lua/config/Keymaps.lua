@@ -1,4 +1,4 @@
---PERF: This file houses all the custom / overridden keybinds.
+--PERF: This file houses all the custom / overridden keybind
 
 
 -- NOTE: Open lazy GUI
@@ -14,7 +14,10 @@ vim.keymap.set("n", "<leader>e", "<cmd>:lua Snacks.explorer()<cr>", { desc = "to
 -- NOTE: Save file
 vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>Q", "<cmd>:q!<cr>", { desc = " Force Quit" })
+vim.keymap.set("n", "<leader>q", "<cmd>:q!<cr>", { desc = " force quit" })
+
+-- NOTE: Source File
+vim.keymap.set("n", "<leader>fs", "<cmd>:so<cr>", { desc = "Source File" })
 
 -- NOTE: Buffer Controls
 vim.keymap.set("n", "<leader>bn", "<cmd>BufferNext<cr>", { desc = "next tab" })

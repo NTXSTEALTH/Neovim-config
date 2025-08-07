@@ -15,6 +15,7 @@ vim.opt.spelllang = "en_us"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 vim.opt.showmode = false
+vim.opt.swapfile = false
 vim.diagnostic.config({ virtual_text = true })
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
