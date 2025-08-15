@@ -8,6 +8,7 @@ return {
                 "emmet_language_server",
                 -- "eslintd",
                 -- "prettierd",
+                "tailwindcss",
                 "lua_ls",
                 "ruff",
                 "rust_analyzer",
