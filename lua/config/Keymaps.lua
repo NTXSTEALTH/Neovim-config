@@ -7,7 +7,9 @@ vim.keymap.set("n", "<leader>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 -- NOTE:Open Themify GUI
 vim.keymap.set("n", "<leader>ut", "<CMD>:Themify<CR>", { desc = "Open Themify GUI" })
 
--- NOTE: Toggle File Tree
+-- NOTE: Open Mason GUI
+vim.keymap.set("n", "<leader>um", "<CMD>:Mason<CR>", { desc = "Open Mason" })
+
 -- NOTE: vim.keymap.set("n", "<leader>e", "<cmd>:Neotree toggle<cr>", { desc = "toggle neotree" })
 vim.keymap.set("n", "<leader>e", "<cmd>:lua Snacks.explorer()<cr>", { desc = "toggle Explorer" })
 
