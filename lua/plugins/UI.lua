@@ -122,6 +122,10 @@ return {
                 { "<leader>bB", icon = "" }, --NOTE: Move Tab Right
                 { "<leader>bN", icon = "" }, --NOTE: Move Tab Left
 
+                { "<leader>cS", group = "Live Server", icon = "" }, --NOTE: Live Server
+                { "<leader>cSs", icon = "" }, --NOTE: Live Server Start
+                { "<leader>cSS", icon = "" }, --NOTE: Live Server Stop
+
                 { "<leader>b1", icon = "" },
                 { "<leader>b2", icon = "" },
                 { "<leader>b3", icon = "" },

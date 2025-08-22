@@ -61,3 +61,7 @@ vim.keymap.set("n", "<leader><leader>", "<CMD>Telescope find_files<CR>", { desc 
 
 -- NOTE: Codium AI binds
 vim.keymap.set("n", "<leader>cc", "<CMD>Codeium Toggle<CR>", { desc = "Toggle Codium" })
+
+-- NOTE: Keybinds to live server
+vim.keymap.set("n", "<leader>cSs", "<cmd>LiveServerStart<cr>", { desc = "Start live server" })
+vim.keymap.set("n", "<leader>cSS", "<cmd>LiveServerStop<cr>", { desc = "Stop live server" })

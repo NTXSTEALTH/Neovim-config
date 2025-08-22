@@ -45,6 +45,9 @@ return {
                     },
                 },
             })
+            lspconfig.cssls.setup({
+                capabilities = capabilities,
+            })
         end
 
     },

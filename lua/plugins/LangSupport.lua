@@ -1,6 +1,13 @@
 return {
 
     -- NOTE: WebDev support [ HTML, CSS, JS, Tailwind, React]
+
+    {
+        'barrett-ruth/live-server.nvim',
+        build = 'pnpm add -g live-server',
+        cmd = { 'LiveServerStart', 'LiveServerStop' },
+        config = true
+    },
     {
         "roobert/tailwindcss-colorizer-cmp.nvim",
         event = "VeryLazy",
