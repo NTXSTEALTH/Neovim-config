@@ -21,6 +21,7 @@ return {
         config = function()
             local lspkind = require("lspkind")
             local cmp = require("cmp")
+            require('snippets') -- Load your custom snippets file
             require("luasnip.loaders.from_vscode").lazy_load()
             cmp.setup({
                 snippet = {

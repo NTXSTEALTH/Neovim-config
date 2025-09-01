@@ -18,6 +18,9 @@ return {
         end,
     },
     {
+        'grvcoelho/vim-javascript-snippets'
+    },
+    {
         "cjodo/convert.nvim",
         event = "VeryLazy",
         dependencies = {
