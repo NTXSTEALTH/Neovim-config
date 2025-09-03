@@ -25,6 +25,8 @@ vim.opt.timeoutlen = 1000
 vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 0
 
+-- vim.o.shell = "C:\\Program Files\\nu\\bin\\nu.exe"
+
 -- NOTE: Spell Checking Changes.
 vim.api.nvim_set_hl(0, "SpellBad", { undercurl = true, sp = "Red" })
 vim.api.nvim_set_hl(0, "SpellCap", { undercurl = true, sp = "Blue" })
