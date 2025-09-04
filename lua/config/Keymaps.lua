@@ -1,6 +1,7 @@
---PERF: This file houses all the custom / overridden keybind
+--PERF: This file houses all the custom / overridden key binds
 
-
+-- NOTE: Nav Key binds
+vim.keymap.set('i', '<A-j>', '<Esc>', { noremap = true, silent = true })
 -- NOTE: Open lazy GUI
 vim.keymap.set("n", "<leader>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 
@@ -10,7 +11,8 @@ vim.keymap.set("n", "<leader>ut", "<CMD>:Themify<CR>", { desc = "Open Themify GU
 -- NOTE: Open Mason GUI
 vim.keymap.set("n", "<leader>um", "<CMD>:Mason<CR>", { desc = "Open Mason" })
 
--- NOTE: vim.keymap.set("n", "<leader>e", "<cmd>:Neotree toggle<cr>", { desc = "toggle neotree" })
+-- NOTE: File Tree GUI
+--vim.keymap.set("n", "<leader>e", "<cmd>:Neotree toggle<cr>", { desc = "toggle neotree" })
 vim.keymap.set("n", "<leader>e", "<cmd>:lua Snacks.explorer()<cr>", { desc = "toggle Explorer" })
 
 -- NOTE: Save file
