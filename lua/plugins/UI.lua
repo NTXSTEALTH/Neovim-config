@@ -5,6 +5,12 @@ return {
         priority = 1000,
     },
     {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    {
         "nvim-tree/nvim-web-devicons",
         config = function()
             require("nvim-web-devicons").setup()
@@ -126,15 +132,15 @@ return {
                 { "<leader>cSs", icon = "" }, --NOTE: Live Server Start
                 { "<leader>cSS", icon = "" }, --NOTE: Live Server Stop
 
-                { "<leader>b1", icon = "" },
-                { "<leader>b2", icon = "" },
-                { "<leader>b3", icon = "" },
-                { "<leader>b4", icon = "" },
-                { "<leader>b5", icon = "" },
-                { "<leader>b6", icon = "" },
-                { "<leader>b7", icon = "" },
-                { "<leader>b8", icon = "" },
-                { "<leader>b9", icon = "" },
+                { "<leader>b1", icon = "1" },
+                { "<leader>b2", icon = "2" },
+                { "<leader>b3", icon = "3" },
+                { "<leader>b4", icon = "4" },
+                { "<leader>b5", icon = "5" },
+                { "<leader>b6", icon = "6" },
+                { "<leader>b7", icon = "7" },
+                { "<leader>b8", icon = "8" },
+                { "<leader>b9", icon = "9" },
             })
         end,
     },
