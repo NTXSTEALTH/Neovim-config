@@ -75,4 +75,14 @@ return {
     --         -- log_level = 'debug',
     --     },
     -- }
+
+    {
+        'willothy/wezterm.nvim',
+        config = function()
+            require('wezterm').setup({
+                -- Plugin-specific configuration options
+                -- For instance, enabling certain animation types
+            })
+        end,
+    },
 }

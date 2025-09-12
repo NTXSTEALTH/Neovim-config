@@ -5,12 +5,6 @@ return {
         priority = 1000,
     },
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
-    {
         "nvim-tree/nvim-web-devicons",
         config = function()
             require("nvim-web-devicons").setup()
@@ -25,6 +19,12 @@ return {
 
         config = function()
             require('themify').setup({
+                async = true,
+                -- Enabling this would load the colorscheme asynchronously, which might improve your startup time.
+
+                activity = true,
+                -- Enabling this would track your colorscheme usage activity.
+
                 -- List of the Themes.
                 'folke/tokyonight.nvim',
                 "catppuccin/nvim",
@@ -34,8 +34,8 @@ return {
                 "bluz71/vim-nightfly-colors",
                 "rebelot/kanagawa.nvim",
                 "ellisonleao/gruvbox.nvim",
+                "rose-pine/neovim",
                 "olivercederborg/poimandres.nvim",
-                "uloco/bluloco.nvim",
                 'default'
             })
         end
