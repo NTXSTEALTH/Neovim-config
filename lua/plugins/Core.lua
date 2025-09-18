@@ -6,7 +6,7 @@ return {
         lazy = false,
         build = ":TSUpdate",
 
-        ensure_installed = { "lua", "markdown", "markdown_inline", "Python", "html", "css", "javascript", "typescript", "json", "c", "cpp" },
+        ensure_installed = { "lua", "markdown", "markdown_inline", "Python", "html", "css", "javascript", "typescript", "json", "c", "cpp", "tsx", "jsx" },
         config = function()
             require 'nvim-treesitter.configs'.setup {
                 highlight = {
@@ -44,7 +44,7 @@ return {
                 enabled = true,
                 timeout = 2000,
             },
-            picker = { enabled = true },
+            picker = { enabled = true, replace_netrw = true, hidden = true },
             quickfile = { enabled = true },
             scope = { enabled = true },
             scroll = { enabled = true },
@@ -207,5 +207,28 @@ return {
             require("mini.comment").setup({})
         end,
     },
+    --[[ {
+        -- NOTE: This is a comment plugins to add comments to all the file types.
+        'numToStr/Comment.nvim',
+        opts = {
+            -- add any options here
+        },
+        config = function()
+            require('Comment').setup()
+        end
+    }, ]]
+    -- {
+    --     "folke/ts-comments.nvim",
+    --     opts = {},
+    --     event = "VeryLazy",
+    --     enabled = vim.fn.has("nvim-0.10.0") == 1,
+    -- },
+{
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      opts = {
+        enable = true,
+        enable_autocmd = false,
+      },
+    }, 
 
 }

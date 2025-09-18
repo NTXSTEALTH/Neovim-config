@@ -4,12 +4,12 @@ return {
         name = "catppuccin",
         priority = 1000,
     },
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-    },
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {},
+    -- },
     {
         "nvim-tree/nvim-web-devicons",
         config = function()

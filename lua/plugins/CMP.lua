@@ -80,22 +80,33 @@ return {
             }
         end,
     },
+    -- {
+    --     "Exafunction/windsurf.nvim",
+    --     event = "VeryLazy",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "hrsh7th/nvim-cmp",
+    --     },
+    --     -- Ensure it loads on BufEnter or when a command is called
+    --     event = "BufEnter", -- Or "VimEnter" if you want it loaded earlier for global status
+    --     config = function()
+    --         require("codeium").setup({
+    --             virtual_text = { enabled = true },
+    --             -- Your Codeium config here
+    --         })
+    --     end,
+    -- },
+
+    -- add this to the file where you setup your other plugins:
     {
-        "Exafunction/windsurf.nvim",
+        "monkoose/neocodeium",
         event = "VeryLazy",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-        -- Ensure it loads on BufEnter or when a command is called
-        event = "BufEnter", -- Or "VimEnter" if you want it loaded earlier for global status
         config = function()
-            require("codeium").setup({
-                virtual_text = { enabled = true },
-                -- Your Codeium config here
-            })
+            local neocodeium = require("neocodeium")
+            neocodeium.setup()
+            vim.keymap.set("i", "<A-f>", neocodeium.accept)
         end,
-    },
+    }
 
 
 }
