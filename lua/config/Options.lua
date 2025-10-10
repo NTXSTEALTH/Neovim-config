@@ -25,6 +25,10 @@ vim.opt.timeoutlen = 1000
 vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 0
 
+vim.opt.updatetime = 100
+
+vim.lsp.enable = true
+
 -- vim.o.shell = "C:\\Program Files\\nu\\bin\\nu.exe"
 
 -- NOTE: Spell Checking Changes.
