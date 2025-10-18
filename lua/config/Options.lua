@@ -5,7 +5,7 @@ vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 
 -- NOTE: Editor options.
-vim.cmd.colorscheme("catppuccin")
+-- vim.cmd.colorscheme("catppuccin")
 vim.opt.fileformats = "unix,dos"
 vim.opt.relativenumber = true
 vim.opt.number = true
@@ -40,3 +40,4 @@ vim.api.nvim_set_hl(0, "SpellBad", { underline = true })
 vim.api.nvim_set_hl(0, "SpellCap", { underline = true })
 vim.api.nvim_set_hl(0, "SpellRare", { underline = true })
 vim.api.nvim_set_hl(0, "SpellLocal", { underline = true })
+

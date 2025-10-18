@@ -1,7 +1,7 @@
 --PERF: This file houses all the custom / overridden key binds
 
 -- NOTE: Nav Key binds
-vim.keymap.set('i', '<A-j>', '<Esc>', { noremap = true, silent = true })
+vim.keymap.set("i", "<A-j>", "<Esc>", { noremap = true, silent = true })
 -- NOTE: Open lazy GUI
 vim.keymap.set("n", "<leader>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 
@@ -23,24 +23,24 @@ vim.keymap.set("n", "<leader>q", "<cmd>:q!<cr>", { desc = " force quit" })
 -- NOTE: Source File
 vim.keymap.set("n", "<leader>fs", "<cmd>:so<cr>", { desc = "Source File" })
 
--- NOTE: Buffer Controls
-vim.keymap.set("n", "<leader>bn", "<cmd>BufferNext<cr>", { desc = "next tab" })
-vim.keymap.set("n", "<leader>bb", "<cmd>BufferPrevious<cr>", { desc = "prev tab" })
-vim.keymap.set("n", "<leader>bN", "<cmd>BufferMovePrevious<cr>", { desc = "move tab Left" })
-vim.keymap.set("n", "<leader>bB", "<cmd>BufferMoveNext<cr>", { desc = "move tab Right" })
+-- NOTE: BufferLine Controls
+vim.keymap.set("n", "<leader>bn", "<cmd>BufferLineCycleNext<cr>", { desc = "next tab" })
+vim.keymap.set("n", "<leader>bb", "<cmd>BufferLineCyclePrev<cr>", { desc = "prev tab" })
+vim.keymap.set("n", "<leader>bN", "<cmd>BufferLineMovePrev<cr>", { desc = "move tab Left" })
+vim.keymap.set("n", "<leader>bB", "<cmd>BufferLineMoveNext<cr>", { desc = "move tab Right" })
 
-vim.keymap.set("n", "<leader>b1", "<Cmd>BufferGoto 1<CR>", { desc = "tab" })
-vim.keymap.set("n", "<leader>b2", "<Cmd>BufferGoto 2<CR>", { desc = "tab" })
-vim.keymap.set("n", "<leader>b3", "<Cmd>BufferGoto 3<CR>", { desc = "tab" })
-vim.keymap.set("n", "<leader>b4", "<Cmd>BufferGoto 4<CR>", { desc = "tab" })
-vim.keymap.set("n", "<leader>b5", "<Cmd>BufferGoto 5<CR>", { desc = "tab" })
-vim.keymap.set("n", "<leader>b6", "<Cmd>BufferGoto 6<CR>", { desc = "tab" })
-vim.keymap.set("n", "<leader>b7", "<Cmd>BufferGoto 7<CR>", { desc = "tab" })
-vim.keymap.set("n", "<leader>b8", "<Cmd>BufferGoto 8<CR>", { desc = "tab" })
-vim.keymap.set("n", "<leader>b9", "<Cmd>BufferGoto 9<CR>", { desc = "tab" })
+vim.keymap.set("n", "<leader>b1", "<Cmd>BufferLineGoToBuffer 1<CR>", { desc = "tab" })
+vim.keymap.set("n", "<leader>b2", "<Cmd>BufferLineGoToBuffer 2<CR>", { desc = "tab" })
+vim.keymap.set("n", "<leader>b3", "<Cmd>BufferLineGoToBuffer 3<CR>", { desc = "tab" })
+vim.keymap.set("n", "<leader>b4", "<Cmd>BufferLineGoToBuffer 4<CR>", { desc = "tab" })
+vim.keymap.set("n", "<leader>b5", "<Cmd>BufferLineGoToBuffer 5<CR>", { desc = "tab" })
+vim.keymap.set("n", "<leader>b6", "<Cmd>BufferLineGoToBuffer 6<CR>", { desc = "tab" })
+vim.keymap.set("n", "<leader>b7", "<Cmd>BufferLineGoToBuffer 7<CR>", { desc = "tab" })
+vim.keymap.set("n", "<leader>b8", "<Cmd>BufferLineGoToBuffer 8<CR>", { desc = "tab" })
+vim.keymap.set("n", "<leader>b9", "<Cmd>BufferLineGoToBuffer 9<CR>", { desc = "tab" })
 
-vim.keymap.set("n", "<leader>bc", "<Cmd>BufferClose<CR>", { desc = "Close Buffer" })
-vim.keymap.set("n", "<leader>br", "<Cmd>BufferRestore<CR>", { desc = "Restore Buffer" })
+vim.keymap.set("n", "<leader>bc", "<Cmd>BufferLineClose<CR>", { desc = "Close Buffer" })
+vim.keymap.set("n", "<leader>br", "<Cmd>BufferLineRestore<CR>", { desc = "Restore Buffer" })
 
 -- NOTE: File Binds
 vim.keymap.set("n", "<leader>fF", vim.lsp.buf.format, { desc = "Format File" })
@@ -67,3 +67,6 @@ vim.keymap.set("n", "<leader>cc", "<CMD>Codeium Toggle<CR>", { desc = "Toggle Co
 -- NOTE: Keybinds to live server
 vim.keymap.set("n", "<leader>cSs", "<cmd>LiveServerStart<cr>", { desc = "Start live server" })
 vim.keymap.set("n", "<leader>cSS", "<cmd>LiveServerStop<cr>", { desc = "Stop live server" })
+
+--NOTE: Default Vim binds override
+vim.keymap.set("n", "<C->", "<cmd>echo hello <CR>", { desc = "overridden" })
