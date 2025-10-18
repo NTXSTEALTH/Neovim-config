@@ -6,7 +6,7 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-ui-select.nvim" },
 	},
 
 	{
@@ -663,12 +663,6 @@ return {
 					find_left = "msF",
 					highlight = "msh",
 					update_n_lines = "msn",
-				},
-			})
-			require("mini.indentscope").setup({
-				draw = {
-					delay = 0,
-					priority = 100,
 				},
 			})
 			require("mini.ai").setup({
