@@ -18,7 +18,6 @@ vim.keymap.set("n", "<leader>e", "<cmd>:lua Snacks.explorer()<cr>", { desc = "to
 -- NOTE: Save file
 vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
 vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>q", "<cmd>:q!<cr>", { desc = " force quit" })
 
 -- NOTE: Source File
 vim.keymap.set("n", "<leader>fs", "<cmd>:so<cr>", { desc = "Source File" })
@@ -47,7 +46,24 @@ vim.keymap.set("n", "<leader>fF", vim.lsp.buf.format, { desc = "Format File" })
 vim.keymap.set({ "n", "v" }, "Y", '"+y', { desc = "Yank to clipboard" })
 
 -- NOTE: Terminal
-vim.keymap.set("n", "<leader>t", "<CMD>ToggleTerm direction=vertical size=60 name=main<CR>", { desc = "Open Terminal" })
+vim.keymap.set(
+	"n",
+	"<leader>tt",
+	"<CMD>ToggleTerm direction=vertical size=60 name=main<CR>",
+	{ desc = "Open Terminal" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>tf",
+	"<CMD>ToggleTerm direction=float size=60 name=floating<CR>",
+	{ desc = "Open Floating Terminal" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>tT",
+	"<CMD>ToggleTerm direction=tab size=60 name=floating<CR>",
+	{ desc = "Open Terminal Tab" }
+)
 
 -- NOTE: Code Runner bind
 vim.keymap.set("n", "<leader>cf", "<CMD>RunFile<CR>", { desc = "Run File" })
@@ -62,11 +78,32 @@ vim.keymap.set("n", "<leader>cx", vim.lsp.buf.rename, { desc = "Rename" })
 vim.keymap.set("n", "<leader><leader>", "<CMD>Telescope find_files<CR>", { desc = "Run File" })
 
 -- NOTE: Codium AI binds
-vim.keymap.set("n", "<leader>cc", "<CMD>Codeium Toggle<CR>", { desc = "Toggle Codium" })
+vim.keymap.set("n", "<leader>at", "<CMD>NeoCodeium toggle<CR>", { desc = "Toggle Codium" })
+vim.keymap.set("n", "<leader>ar", "<CMD>NeoCodeium restart<CR>", { desc = "Restart Codium" })
 
 -- NOTE: Keybinds to live server
 vim.keymap.set("n", "<leader>cSs", "<cmd>LiveServerStart<cr>", { desc = "Start live server" })
 vim.keymap.set("n", "<leader>cSS", "<cmd>LiveServerStop<cr>", { desc = "Stop live server" })
 
+--NOTE: Sessions Binds
+-- load the session for the current directory
+vim.keymap.set("n", "<leader><A-s>", function()
+	require("persistence").load()
+end, { desc = "Load Session" })
+
+-- select a session to load
+vim.keymap.set("n", "<leader>q<A-s>S", function()
+	require("persistence").select()
+end, { desc = "Select Session" })
+
+-- load the last session
+vim.keymap.set("n", "<leader><A-s>l", function()
+	require("persistence").load({ last = true })
+end, { desc = "Load Last Session" })
+
+-- stop Persistence => session won't be saved on exit
+vim.keymap.set("n", "<leader><A-s>d", function()
+	require("persistence").stop()
+end, { desc = "Stop Persistence" })
+
 --NOTE: Default Vim binds override
-vim.keymap.set("n", "<C->", "<cmd>echo hello <CR>", { desc = "overridden" })

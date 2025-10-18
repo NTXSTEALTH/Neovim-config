@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 return {
 	cmd = { "clangd" },
 	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },

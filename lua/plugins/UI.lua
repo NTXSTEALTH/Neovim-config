@@ -143,7 +143,6 @@ return {
 				{ "<leader>u", group = "UI" }, -- NOTE: UI Options GUI
 				{ "<leader>c", group = "Code" }, -- NOTE: Code Options GUI
 				{ "<leader>cr", icon = "" }, -- NOTE: Run Code
-				{ "<leader>cc", icon = "" }, -- NOTE: Toggle Codium
 				{ "<leader>cf", icon = "" }, -- NOTE: Run File
 				{ "m", group = "Mini", icon = "󰘨" }, -- NOTE: Mini Options
 				{ "<leader>w", icon = "" }, --NOTE: Save File
@@ -169,6 +168,12 @@ return {
 				{ "<leader>b7", icon = "7" },
 				{ "<leader>b8", icon = "8" },
 				{ "<leader>b9", icon = "9" },
+
+				{ "<leader>t", group = "Terminal Options", icon = "" }, -- NOTE: Sessions Options
+
+				{ "<leader>a", group = "AI", icon = "" }, -- NOTE: Sessions Options
+
+				{ "<leader>q", group = "Sessions", icon = "" }, -- NOTE: Sessions Options
 			})
 		end,
 	},
@@ -197,6 +202,7 @@ return {
 				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
 				desc = "LSP Definitions / references / ... (Trouble)",
 			},
+
 			{
 				"<leader>xL",
 				"<cmd>Trouble loclist toggle<cr>",
