@@ -1,6 +1,17 @@
 return {
 
-	{ "nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate" },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		branch = "master",
+		lazy = false,
+		build = ":TSUpdate",
+		opts = {
+			auto_intall = true,
+			indent = {
+				enable = true, -- Enable Treesitter-based indentation
+			},
+		},
+	},
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 
 	{
@@ -617,15 +628,15 @@ return {
 			-- refer to the configuration section below
 		},
 	},
-	{
-		"JoosepAlviste/nvim-ts-context-commentstring",
-
-		config = function()
-			require("ts_context_commentstring").setup({
-				enable_autocmd = false,
-			})
-		end,
-	},
+	-- {
+	-- 	"JoosepAlviste/nvim-ts-context-commentstring",
+	--
+	-- 	config = function()
+	-- 		require("ts_context_commentstring").setup({
+	-- 			enable_autocmd = false,
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"folke/ts-comments.nvim",
 		opts = {
@@ -668,8 +679,7 @@ return {
 			require("mini.ai").setup({
 				n_lines = 500,
 			})
-			-- require("mini.sessions").setup({})
-			-- require("mini.comment").setup({})
+			require("mini.comment").setup({})
 		end,
 	},
 

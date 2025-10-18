@@ -1,4 +1,4 @@
----@diagnostic disable: undefined-field
+---@diagnostic disable: undefined-field, undefined-global
 return {
 	cmd = { "clangd" },
 	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },

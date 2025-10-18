@@ -16,7 +16,6 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.termguicolors = true
 vim.opt.showmode = false
 vim.opt.swapfile = false
-vim.diagnostic.config({ virtual_text = true })
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -40,4 +39,3 @@ vim.api.nvim_set_hl(0, "SpellBad", { underline = true })
 vim.api.nvim_set_hl(0, "SpellCap", { underline = true })
 vim.api.nvim_set_hl(0, "SpellRare", { underline = true })
 vim.api.nvim_set_hl(0, "SpellLocal", { underline = true })
-

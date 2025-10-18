@@ -17,7 +17,8 @@ vim.keymap.set("n", "<leader>e", "<cmd>:lua Snacks.explorer()<cr>", { desc = "to
 
 -- NOTE: Save file
 vim.keymap.set("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
-vim.keymap.set("n", "<leader>q", "<cmd>:q<cr>", { desc = "Quit" })
+
+vim.keymap.set("n", "<leader>q", "<cmd>:q!<cr>", { desc = "Quit" })
 
 -- NOTE: Source File
 vim.keymap.set("n", "<leader>fs", "<cmd>:so<cr>", { desc = "Source File" })
@@ -38,8 +39,10 @@ vim.keymap.set("n", "<leader>b7", "<Cmd>BufferLineGoToBuffer 7<CR>", { desc = "t
 vim.keymap.set("n", "<leader>b8", "<Cmd>BufferLineGoToBuffer 8<CR>", { desc = "tab" })
 vim.keymap.set("n", "<leader>b9", "<Cmd>BufferLineGoToBuffer 9<CR>", { desc = "tab" })
 
-vim.keymap.set("n", "<leader>bc", "<Cmd>BufferLineClose<CR>", { desc = "Close Buffer" })
-vim.keymap.set("n", "<leader>br", "<Cmd>BufferLineRestore<CR>", { desc = "Restore Buffer" })
+vim.keymap.set("n", "<leader>bc", "<Cmd>BufferLinePickClose<CR>", { desc = "Close Buffer" })
+
+vim.keymap.set("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle Buffer Pin" })
+-- vim.keymap.set("n", "<leader>bg", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle Buffer Pin" })
 
 -- NOTE: File Binds
 vim.keymap.set("n", "<leader>fF", vim.lsp.buf.format, { desc = "Format File" })
@@ -84,26 +87,5 @@ vim.keymap.set("n", "<leader>ar", "<CMD>NeoCodeium restart<CR>", { desc = "Resta
 -- NOTE: Keybinds to live server
 vim.keymap.set("n", "<leader>cSs", "<cmd>LiveServerStart<cr>", { desc = "Start live server" })
 vim.keymap.set("n", "<leader>cSS", "<cmd>LiveServerStop<cr>", { desc = "Stop live server" })
-
---NOTE: Sessions Binds
--- load the session for the current directory
-vim.keymap.set("n", "<leader><A-s>", function()
-	require("persistence").load()
-end, { desc = "Load Session" })
-
--- select a session to load
-vim.keymap.set("n", "<leader>q<A-s>S", function()
-	require("persistence").select()
-end, { desc = "Select Session" })
-
--- load the last session
-vim.keymap.set("n", "<leader><A-s>l", function()
-	require("persistence").load({ last = true })
-end, { desc = "Load Last Session" })
-
--- stop Persistence => session won't be saved on exit
-vim.keymap.set("n", "<leader><A-s>d", function()
-	require("persistence").stop()
-end, { desc = "Stop Persistence" })
 
 --NOTE: Default Vim binds override

@@ -36,7 +36,26 @@ return {
 			},
 
 			-- (Default) Only show the documentation popup when manually triggered
-			completion = { documentation = { auto_show = true } },
+			-- completion = { documentation = { auto_show = true } },
+			completion = {
+				menu = {
+					draw = {
+						-- We don't need label_description now because label and label_description are already
+						-- combined together in label by colorful-menu.nvim.
+						columns = { { "kind_icon" }, { "label", gap = 1 } },
+						components = {
+							label = {
+								text = function(ctx)
+									return require("colorful-menu").blink_components_text(ctx)
+								end,
+								highlight = function(ctx)
+									return require("colorful-menu").blink_components_highlight(ctx)
+								end,
+							},
+						},
+					},
+				},
+			},
 
 			-- Default list of enabled providers defined so that you can extend it
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -53,32 +72,4 @@ return {
 		},
 		opts_extend = { "sources.default" },
 	},
-
-	-- { -- optional cmp completion source for require statements and module annotations
-	-- 	"hrsh7th/nvim-cmp",
-	-- 	opts = function(_, opts)
-	-- 		opts.sources = opts.sources or {}
-	-- 		table.insert(opts.sources, {
-	-- 			name = "lazydev",
-	-- 			group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-	-- 		})
-	-- 	end,
-	-- },
-	-- { -- optional blink completion source for require statements and module annotations
-	-- 	"saghen/blink.cmp",
-	-- 	opts = {
-	-- 		sources = {
-	-- 			-- add lazydev to your completion providers
-	-- 			default = { "lazydev", "lsp", "path", "snippets", "buffer" },
-	-- 			providers = {
-	-- 				lazydev = {
-	-- 					name = "LazyDev",
-	-- 					module = "lazydev.integrations.blink",
-	-- 					-- make lazydev completions top priority (see `:h blink.cmp`)
-	-- 					score_offset = 100,
-	-- 				},
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
 }
