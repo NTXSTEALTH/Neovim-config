@@ -5,12 +5,16 @@ return {
 		branch = "master",
 		lazy = false,
 		build = ":TSUpdate",
-		opts = {
-			auto_intall = true,
-			indent = {
-				enable = true, -- Enable Treesitter-based indentation
-			},
-		},
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				auto_intall = true,
+				indent = {
+					enable = true,
+				},
+				highlight = { enable = true },
+			})
+		end,
+		opts = {},
 	},
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 
@@ -731,4 +735,6 @@ return {
 			require("toggleterm").setup(opts)
 		end,
 	},
+
+	{ "andymass/vim-matchup" },
 }

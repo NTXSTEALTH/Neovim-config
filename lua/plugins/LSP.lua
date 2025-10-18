@@ -28,6 +28,8 @@ if ok then
 	capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 end
 
+vim.lsp.inlay_hint.enable(true)
+
 vim.lsp.enable({
 	"lua_ls", --NOTE: Lua Lsp
 	"stylua", --NOTE: Lua Formatter
@@ -86,4 +88,28 @@ return {
 	{ "mason-org/mason.nvim", opts = {
 		ensure_installed = servers,
 	} },
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			require("lint").linters_by_ft = {
+				lua = { "lua_ls" },
+
+				python = { "ruff" }, --NOTE: Python linter
+
+				javascript = { "eslint" },
+				javascriptreact = { "eslint" },
+				typescript = { "eslint" },
+				typescriptreact = { "eslint" },
+				json = { "eslint" },
+				css = { "eslint" },
+				scss = { "eslint" },
+				html = { "eslint" },
+				yaml = { "eslint" },
+
+				c = { "clangd" },
+
+				markdown = { "prettierd" },
+			}
+		end,
+	},
 }
