@@ -139,8 +139,7 @@ return {
 		config = function()
 			require("bufferline").setup({
 				options = {
-					separator_style = "padded_slant",
-					numbers = "id",
+					separator_style = "slope",
 				},
 			})
 		end,

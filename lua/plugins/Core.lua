@@ -632,15 +632,6 @@ return {
 			-- refer to the configuration section below
 		},
 	},
-	-- {
-	-- 	"JoosepAlviste/nvim-ts-context-commentstring",
-	--
-	-- 	config = function()
-	-- 		require("ts_context_commentstring").setup({
-	-- 			enable_autocmd = false,
-	-- 		})
-	-- 	end,
-	-- },
 	{
 		"folke/ts-comments.nvim",
 		opts = {
@@ -725,6 +716,12 @@ return {
 			vim.api.nvim_set_keymap(
 				"t",
 				"<Esc>",
+				"<C-\\><C-N>",
+				{ noremap = true, silent = true, desc = "Exit terminal mode" }
+			),
+			vim.api.nvim_set_keymap(
+				"t",
+				"A-j>",
 				"<C-\\><C-N>",
 				{ noremap = true, silent = true, desc = "Exit terminal mode" }
 			),
