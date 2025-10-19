@@ -111,6 +111,7 @@ return {
 				"RainbowViolet",
 				"RainbowCyan",
 			}
+
 			local hooks = require("ibl.hooks")
 			-- create the highlight groups in the highlight setup hook, so they are reset
 			-- every time the colorscheme changes
@@ -124,10 +125,7 @@ return {
 				vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
 			end)
 
-			vim.g.rainbow_delimiters = { highlight = highlight }
-			require("ibl").setup({ scope = { highlight = highlight } })
-
-			hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+			require("ibl").setup({ indent = { highlight = highlight } })
 		end,
 	},
 
@@ -152,17 +150,17 @@ return {
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		opts = {
-			lsp = {
-				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-				override = {
-					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-					["vim.lsp.util.stylize_markdown"] = true,
-					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-				},
-			},
+			-- lsp = {
+			-- 	-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+			-- 	override = {
+			-- 		["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+			-- 		["vim.lsp.util.stylize_markdown"] = true,
+			-- 		["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+			-- 	},
+			-- },
 			-- you can enable a preset for easier configuration
 			presets = {
-				bottom_search = true, -- use a classic bottom cmdline for search
+				bottom_search = false, -- use a classic bottom cmdline for search
 				command_palette = true, -- position the cmdline and popupmenu together
 				long_message_to_split = true, -- long messages will be sent to a split
 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
@@ -316,6 +314,29 @@ return {
 				"<cmd>Trouble qflist toggle<cr>",
 				desc = "Quickfix List (Trouble)",
 			},
+		},
+	},
+	{
+		"sphamba/smear-cursor.nvim",
+
+		opts = {
+			-- Smear cursor when switching buffers or windows.
+			smear_between_buffers = true,
+
+			-- Smear cursor when moving within line or to neighbor lines.
+			-- Use `min_horizontal_distance_smear` and `min_vertical_distance_smear` for finer control
+			smear_between_neighbor_lines = true,
+
+			-- Draw the smear in buffer space instead of screen space when scrolling
+			scroll_buffer_space = true,
+
+			-- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
+			-- Smears will blend better on all backgrounds.
+			legacy_computing_symbols_support = false,
+
+			-- Smear cursor in insert mode.
+			-- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
+			smear_insert_mode = true,
 		},
 	},
 }
