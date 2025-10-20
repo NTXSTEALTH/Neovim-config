@@ -61,13 +61,13 @@ return {
 			-- 	end,
 			-- 	desc = "Smart Find Files",
 			-- },
-			{
-				"<leader>,",
-				function()
-					Snacks.picker.buffers()
-				end,
-				desc = "Buffers",
-			},
+			-- {
+			-- 	"<leader>,",
+			-- 	function()
+			-- 		Snacks.picker.buffers()
+			-- 	end,
+			-- 	desc = "Buffers",
+			-- },
 			{
 				"<leader>/",
 				function()
@@ -97,20 +97,20 @@ return {
 				desc = "File Explorer",
 			},
 			-- find
-			{
-				"<leader>fb",
-				function()
-					Snacks.picker.buffers()
-				end,
-				desc = "Buffers",
-			},
-			{
-				"<leader>fc",
-				function()
-					Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-				end,
-				desc = "Find Config File",
-			},
+			-- {
+			-- 	"<leader>fb",
+			-- 	function()
+			-- 		Snacks.picker.buffers()
+			-- 	end,
+			-- 	desc = "Buffers",
+			-- },
+			-- {
+			-- 	"<leader>fc",
+			-- 	function()
+			-- 		Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+			-- 	end,
+			-- 	desc = "Find Config File",
+			-- },
 			-- {
 			-- 	"<leader>ff",
 			-- 	function()
@@ -161,27 +161,27 @@ return {
 				end,
 				desc = "Git Status",
 			},
-			{
-				"<leader>gS",
-				function()
-					Snacks.picker.git_stash()
-				end,
-				desc = "Git Stash",
-			},
-			{
-				"<leader>gd",
-				function()
-					Snacks.picker.git_diff()
-				end,
-				desc = "Git Diff (Hunks)",
-			},
-			{
-				"<leader>gf",
-				function()
-					Snacks.picker.git_log_file()
-				end,
-				desc = "Git Log File",
-			},
+			-- {
+			-- 	"<leader>gS",
+			-- 	function()
+			-- 		Snacks.picker.git_stash()
+			-- 	end,
+			-- 	desc = "Git Stash",
+			-- },
+			-- {
+			-- 	"<leader>gd",
+			-- 	function()
+			-- 		Snacks.picker.git_diff()
+			-- 	end,
+			-- 	desc = "Git Diff (Hunks)",
+			-- },
+			-- {
+			-- 	"<leader>gf",
+			-- 	function()
+			-- 		Snacks.picker.git_log_file()
+			-- 	end,
+			-- 	desc = "Git Log File",
+			-- },
 			-- Grep
 			{
 				"<leader>sb",
@@ -213,13 +213,13 @@ return {
 				mode = { "n", "x" },
 			},
 			-- search
-			{
-				'<leader>s"',
-				function()
-					Snacks.picker.registers()
-				end,
-				desc = "Registers",
-			},
+			-- {
+			-- 	'<leader>s"',
+			-- 	function()
+			-- 		Snacks.picker.registers()
+			-- 	end,
+			-- 	desc = "Registers",
+			-- },
 			{
 				"<leader>s/",
 				function()
@@ -255,20 +255,20 @@ return {
 				end,
 				desc = "Commands",
 			},
-			{
-				"<leader>sd",
-				function()
-					Snacks.picker.diagnostics()
-				end,
-				desc = "Diagnostics",
-			},
-			{
-				"<leader>sD",
-				function()
-					Snacks.picker.diagnostics_buffer()
-				end,
-				desc = "Buffer Diagnostics",
-			},
+			-- {
+			-- 	"<leader>sd",
+			-- 	function()
+			-- 		Snacks.picker.diagnostics()
+			-- 	end,
+			-- 	desc = "Diagnostics",
+			-- },
+			-- {
+			-- 	"<leader>sD",
+			-- 	function()
+			-- 		Snacks.picker.diagnostics_buffer()
+			-- 	end,
+			-- 	desc = "Buffer Diagnostics",
+			-- },
 			{
 				"<leader>sh",
 				function()
@@ -277,26 +277,26 @@ return {
 				desc = "Help Pages",
 			},
 			{
-				"<leader>sH",
-				function()
-					Snacks.picker.highlights()
-				end,
-				desc = "Highlights",
-			},
-			{
+				-- 	"<leader>sH",
+				-- 	function()
+				-- 		Snacks.picker.highlights()
+				-- 	end,
+				-- 	desc = "Highlights",
+				-- },
+				-- {
 				"<leader>si",
 				function()
 					Snacks.picker.icons()
 				end,
 				desc = "Icons",
 			},
-			{
-				"<leader>sj",
-				function()
-					Snacks.picker.jumps()
-				end,
-				desc = "Jumps",
-			},
+			-- {
+			-- 	"<leader>sj",
+			-- 	function()
+			-- 		Snacks.picker.jumps()
+			-- 	end,
+			-- 	desc = "Jumps",
+			-- },
 			{
 				"<leader>sk",
 				function()
@@ -304,13 +304,13 @@ return {
 				end,
 				desc = "Keymaps",
 			},
-			{
-				"<leader>sl",
-				function()
-					Snacks.picker.loclist()
-				end,
-				desc = "Location List",
-			},
+			-- {
+			-- 	"<leader>sl",
+			-- 	function()
+			-- 		Snacks.picker.loclist()
+			-- 	end,
+			-- 	desc = "Location List",
+			-- },
 			{
 				"<leader>sm",
 				function()
@@ -318,34 +318,34 @@ return {
 				end,
 				desc = "Marks",
 			},
-			{
-				"<leader>sM",
-				function()
-					Snacks.picker.man()
-				end,
-				desc = "Man Pages",
-			},
-			{
-				"<leader>sp",
-				function()
-					Snacks.picker.lazy()
-				end,
-				desc = "Search for Plugin Spec",
-			},
-			{
-				"<leader>sq",
-				function()
-					Snacks.picker.qflist()
-				end,
-				desc = "Quickfix List",
-			},
-			{
-				"<leader>sR",
-				function()
-					Snacks.picker.resume()
-				end,
-				desc = "Resume",
-			},
+			-- {
+			-- 	"<leader>sM",
+			-- 	function()
+			-- 		Snacks.picker.man()
+			-- 	end,
+			-- 	desc = "Man Pages",
+			-- },
+			-- {
+			-- 	"<leader>sp",
+			-- 	function()
+			-- 		Snacks.picker.lazy()
+			-- 	end,
+			-- 	desc = "Search for Plugin Spec",
+			-- },
+			-- {
+			-- 	"<leader>sq",
+			-- 	function()
+			-- 		Snacks.picker.qflist()
+			-- 	end,
+			-- 	desc = "Quickfix List",
+			-- },
+			-- {
+			-- 	"<leader>sR",
+			-- 	function()
+			-- 		Snacks.picker.resume()
+			-- 	end,
+			-- 	desc = "Resume",
+			-- },
 			{
 				"<leader>su",
 				function()
@@ -353,13 +353,13 @@ return {
 				end,
 				desc = "Undo History",
 			},
-			{
-				"<leader>uC",
-				function()
-					Snacks.picker.colorschemes()
-				end,
-				desc = "Colorschemes",
-			},
+			-- {
+			-- 	"<leader>uC",
+			-- 	function()
+			-- 		Snacks.picker.colorschemes()
+			-- 	end,
+			-- 	desc = "Colorschemes",
+			-- },
 			-- LSP
 			{
 				"gd",
@@ -412,20 +412,20 @@ return {
 				desc = "LSP Workspace Symbols",
 			},
 			-- Other
-			{
-				"<leader>z",
-				function()
-					Snacks.zen()
-				end,
-				desc = "Toggle Zen Mode",
-			},
-			{
-				"<leader>Z",
-				function()
-					Snacks.zen.zoom()
-				end,
-				desc = "Toggle Zoom",
-			},
+			-- {
+			-- 	"<leader>z",
+			-- 	function()
+			-- 		Snacks.zen()
+			-- 	end,
+			-- 	desc = "Toggle Zen Mode",
+			-- },
+			-- {
+			-- 	"<leader>Z",
+			-- 	function()
+			-- 		Snacks.zen.zoom()
+			-- 	end,
+			-- 	desc = "Toggle Zoom",
+			-- },
 			{
 				"<leader>.",
 				function()
@@ -454,21 +454,21 @@ return {
 				end,
 				desc = "Delete Buffer",
 			},
-			{
-				"<leader>cR",
-				function()
-					Snacks.rename.rename_file()
-				end,
-				desc = "Rename File",
-			},
-			{
-				"<leader>gB",
-				function()
-					Snacks.gitbrowse()
-				end,
-				desc = "Git Browse",
-				mode = { "n", "v" },
-			},
+			-- {
+			-- 	"<leader>cR",
+			-- 	function()
+			-- 		Snacks.rename.rename_file()
+			-- 	end,
+			-- 	desc = "Rename File",
+			-- },
+			-- -- {
+			-- 	"<leader>gB",
+			-- 	function()
+			-- 		Snacks.gitbrowse()
+			-- 	end,
+			-- 	desc = "Git Browse",
+			-- 	mode = { "n", "v" },
+			-- },
 			{
 				"<leader>gg",
 				function()
@@ -483,13 +483,13 @@ return {
 				end,
 				desc = "Dismiss All Notifications",
 			},
-			{
-				"<c-/>",
-				function()
-					Snacks.terminal()
-				end,
-				desc = "Toggle Terminal",
-			},
+			-- {
+			-- 	"<c-/>",
+			-- 	function()
+			-- 		Snacks.terminal()
+			-- 	end,
+			-- 	desc = "Toggle Terminal",
+			-- },
 			{
 				"<c-_>",
 				function()
@@ -513,24 +513,24 @@ return {
 				desc = "Prev Reference",
 				mode = { "n", "t" },
 			},
-			{
-				"<leader>N",
-				desc = "Neovim News",
-				function()
-					Snacks.win({
-						file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
-						width = 0.6,
-						height = 0.6,
-						wo = {
-							spell = false,
-							wrap = false,
-							signcolumn = "yes",
-							statuscolumn = " ",
-							conceallevel = 3,
-						},
-					})
-				end,
-			},
+			-- {
+			-- 	"<leader>N",
+			-- 	desc = "Neovim News",
+			-- 	function()
+			-- 		Snacks.win({
+			-- 			file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
+			-- 			width = 0.6,
+			-- 			height = 0.6,
+			-- 			wo = {
+			-- 				spell = false,
+			-- 				wrap = false,
+			-- 				signcolumn = "yes",
+			-- 				statuscolumn = " ",
+			-- 				conceallevel = 3,
+			-- 			},
+			-- 		})
+			-- 	end,
+			-- },
 		},
 		init = function()
 			vim.api.nvim_create_autocmd("User", {
