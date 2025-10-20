@@ -67,6 +67,7 @@ return {
 	},
 	{
 		"isakbm/gitgraph.nvim",
+		event = "VeryLazy",
 		opts = {
 			git_cmd = "git",
 			symbols = {
