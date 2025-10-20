@@ -326,11 +326,9 @@ return {
 				{ "<leader>b8", icon = "8" },
 				{ "<leader>b9", icon = "9" },
 
-				{ "<leader>t", group = "Terminal Options", icon = "" }, -- NOTE: Sessions Options
+				{ "<leader>t", group = "Terminal Options", icon = "" }, -- NOTE: Terminal Options
 
-				{ "<leader>a", group = "AI", icon = "" }, -- NOTE: Sessions Options
-
-				{ "<leader>q", group = "Sessions", icon = "" }, -- NOTE: Sessions Options
+				{ "<leader>a", group = "AI", icon = "" }, -- NOTE: AI Options
 			})
 		end,
 	},
