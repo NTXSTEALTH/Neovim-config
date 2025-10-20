@@ -2,6 +2,14 @@
 
 -- NOTE: Nav Key binds
 vim.keymap.set("i", "<A-j>", "<Esc>", { noremap = true, silent = true })
+
+--NOTE: Toggle Transparent Background.
+vim.keymap.set(
+	"n",
+	"<leader>uB",
+	"<CMD>TransparentToggle<CR>",
+	{ desc = "Tooggle Transparency", noremap = true, silent = true }
+)
 -- NOTE: Open lazy GUI
 vim.keymap.set("n", "<leader>l", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 

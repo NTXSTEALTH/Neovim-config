@@ -1,4 +1,4 @@
----@diagnostic disable: assign-type-mismatch
+---@diagnostic disable: assign-type-mismatchui
 return {
 
 	{ "norcalli/nvim-colorizer.lua" },
@@ -132,7 +132,67 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			local colors = {
+				blue = "#80a0ff",
+				cyan = "#79dac8",
+				black = "#080808",
+				white = "#c6c6c6",
+				red = "#ff5189",
+				violet = "#d183e8",
+				grey = "#303030",
+			}
+
+			local bubbles_theme = {
+				normal = {
+					a = { fg = colors.black, bg = colors.violet },
+					b = { fg = colors.white, bg = colors.grey },
+					c = { fg = colors.white },
+				},
+
+				insert = { a = { fg = colors.black, bg = colors.blue } },
+				visual = { a = { fg = colors.black, bg = colors.cyan } },
+				replace = { a = { fg = colors.black, bg = colors.red } },
+
+				inactive = {
+					a = { fg = colors.white, bg = colors.black },
+					b = { fg = colors.white, bg = colors.black },
+					c = { fg = colors.white },
+				},
+			}
+
+			require("lualine").setup({
+				options = {
+					theme = bubbles_theme,
+					component_separators = "",
+					section_separators = { left = "", right = "" },
+				},
+				sections = {
+					lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
+					lualine_b = { "filename", "branch" },
+					lualine_c = {
+						"%=", --[[ add your center components here in place of this comment ]]
+					},
+					lualine_x = {},
+					lualine_y = { "filetype", "progress" },
+					lualine_z = {
+						{ "location", separator = { right = "" }, left_padding = 2 },
+					},
+				},
+				inactive_sections = {
+					lualine_a = { "filename" },
+					lualine_b = {},
+					lualine_c = {},
+					lualine_x = {},
+					lualine_y = {},
+					lualine_z = { "location" },
+				},
+				tabline = {},
+				extensions = {},
+			})
+		end,
 	},
+
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",
@@ -337,5 +397,53 @@ return {
 			-- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
 			smear_insert_mode = true,
 		},
+	},
+	-- {
+	-- 	"tribela/transparent.nvim",
+	-- 	event = "VimEnter",
+	-- 	config = true,
+	-- },
+	{
+		"xiyaowong/transparent.nvim",
+		config = function()
+			-- Optional, you don't have to run setup.
+			require("transparent").setup({
+				-- table: default groups
+				groups = {
+					"Normal",
+					"NormalNC",
+					"Comment",
+					"Constant",
+					"Special",
+					"Identifier",
+					"Statement",
+					"PreProc",
+					"Type",
+					"Underlined",
+					"Todo",
+					"String",
+					"Function",
+					"Conditional",
+					"Repeat",
+					"Operator",
+					"Structure",
+					"LineNr",
+					"NonText",
+					"SignColumn",
+					"CursorLine",
+					"CursorLineNr",
+					"StatusLine",
+					"StatusLineNC",
+					"EndOfBuffer",
+				},
+				-- table: additional groups that should be cleared
+				extra_groups = { "NormalFloat" },
+				-- table: groups you don't want to clear
+				exclude_groups = {},
+				-- function: code to be executed after highlight groups are cleared
+				-- Also the user event "TransparentClear" will be triggered
+				on_clear = function() end,
+			})
+		end,
 	},
 }
