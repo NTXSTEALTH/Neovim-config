@@ -3,6 +3,15 @@ return {
 		"lewis6991/gitsigns.nvim",
 		event = "VeryLazy",
 		opts = {
+			current_line_blame = true,
+			current_line_blame_opts = {
+				virt_text = true,
+				virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+				delay = 100,
+				ignore_whitespace = false,
+				virt_text_priority = 100,
+				use_focus = true,
+			},
 			signs = {
 				add = { text = "▎" },
 				change = { text = "▎" },
@@ -58,13 +67,10 @@ return {
 	},
 	{
 		"barrett-ruth/live-server.nvim",
+		event = "VeryLazy",
 		build = "pnpm add -g live-server",
 		cmd = { "LiveServerStart", "LiveServerStop" },
 		config = true,
-	},
-	{
-		"MeanderingProgrammer/render-markdown.nvim",
-		opts = {},
 	},
 	{
 		"monkoose/neocodeium",

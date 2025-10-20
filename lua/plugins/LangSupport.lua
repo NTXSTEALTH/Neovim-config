@@ -1,12 +1,14 @@
 return {
 	{
 		"ThePrimeagen/refactoring.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("refactoring").setup({})
 		end,
 	},
 	{
 		"folke/lazydev.nvim",
+		event = "VeryLazy",
 		ft = "lua", -- only load on lua files
 		opts = {
 			library = {
@@ -17,8 +19,13 @@ return {
 		},
 	},
 	{
+		"MeanderingProgrammer/render-markdown.nvim",
+        event = "VeryLazy",
+		opts = {},
+	},
+	{
 		"roobert/tailwindcss-colorizer-cmp.nvim",
-		-- optionally, override the default options:
+		event = "VeryLazy",
 		config = function()
 			require("tailwindcss-colorizer-cmp").setup({
 				color_square_width = 2,
