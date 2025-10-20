@@ -675,6 +675,7 @@ return {
 				n_lines = 500,
 			})
 			require("mini.comment").setup({})
+			require("mini.diff").setup({})
 		end,
 	},
 
