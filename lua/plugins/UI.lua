@@ -393,11 +393,6 @@ return {
 			smear_insert_mode = true,
 		},
 	},
-	-- {
-	-- 	"tribela/transparent.nvim",
-	-- 	event = "VimEnter",
-	-- 	config = true,
-	-- },
 	{
 		"xiyaowong/transparent.nvim",
 		config = function()
