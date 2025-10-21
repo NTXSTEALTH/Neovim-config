@@ -55,6 +55,7 @@ vim.diagnostic.config({
 })
 return {
 
+	{ "neovim/nvim-lspconfig" },
 	-- 2. Conform (Formatter)
 	{
 		"stevearc/conform.nvim",

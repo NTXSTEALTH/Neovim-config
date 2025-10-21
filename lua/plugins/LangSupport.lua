@@ -20,7 +20,7 @@ return {
 	},
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
-        event = "VeryLazy",
+		event = "VeryLazy",
 		opts = {},
 	},
 	{
@@ -29,6 +29,23 @@ return {
 		config = function()
 			require("tailwindcss-colorizer-cmp").setup({
 				color_square_width = 2,
+			})
+		end,
+	},
+	{
+		"luckasRanarison/tailwind-tools.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" }, -- Required dependency
+		config = function()
+			require("tailwind-tools").setup({
+				-- Optional: Configure the inline color hints (the core feature you want)
+				color_hints = {
+					enabled = true,
+				},
+				-- If you already configured the tailwindcss LSP, set this to true
+				-- to prevent the plugin from trying to set it up again.
+				server = {
+					override = false,
+				},
 			})
 		end,
 	},
