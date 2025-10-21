@@ -85,9 +85,29 @@ return {
 		},
 	},
 
-	{ "mason-org/mason.nvim", opts = {
-		ensure_installed = servers,
-	} },
+	{
+		"mason-org/mason.nvim",
+		opts = {
+			ensure_installed = {
+				"basedpyright",
+				"ruff",
+
+				"clangd",
+
+				"ts_ls",
+				"cssls",
+				"emmet_ls",
+				"eslint",
+				"svlangserver",
+				"tailwindcss",
+
+				"lua_ls",
+				"stylua",
+
+				"rust_analyzer",
+			},
+		},
+	},
 	{
 		"mfussenegger/nvim-lint",
 		config = function()

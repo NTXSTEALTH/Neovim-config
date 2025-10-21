@@ -113,4 +113,29 @@ return {
 			vim.keymap.set("i", "<A-f>", neocodeium.accept)
 		end,
 	},
+	{
+		"tomasky/bookmarks.nvim",
+		opts = {
+			-- sign_priority = 8,  --set bookmark sign priority to cover other sign
+			save_file = vim.fn.expand("$HOME/.bookmarks"), -- bookmarks save file path
+			keywords = {
+				["@t"] = "☑️ ", -- mark annotation startswith @t ,signs this icon as `Todo`
+				["@w"] = "⚠️ ", -- mark annotation startswith @w ,signs this icon as `Warn`
+				["@f"] = "⛏ ", -- mark annotation startswith @f ,signs this icon as `Fix`
+				["@n"] = " ", -- mark annotation startswith @n ,signs this icon as `Note`
+			},
+			on_attach = function(bufnr)
+				local bm = require("bookmarks")
+				local map = vim.keymap.set
+				map("n", "<leader>mm", bm.bookmark_toggle, { desc = "add or remove mark" })
+				map("n", "<leader>mi", bm.bookmark_ann, { desc = "add or edit mark" })
+				map("n", "<leader>mc", bm.bookmark_clean, { desc = "clean all marks in local buffer" })
+				map("n", "<leader>mn", bm.bookmark_next, { desc = "Jump to next mark" }) -- jump to next mark in local buffer
+				map("n", "<leader>mp", bm.bookmark_prev, { desc = "Jump to previous Mark" }) -- jump to previous mark in local buffer
+				map("n", "<leader>ml", bm.bookmark_list, { desc = "List all markers" }) -- show marked file list in quickfix window
+				map("n", "<leader>mx", bm.bookmark_clear_all, { desc = "Clean all markers" }) -- removes all bookmarks
+			end,
+		},
+		-- tag = 'release' -- To use the latest release
+	},
 }
