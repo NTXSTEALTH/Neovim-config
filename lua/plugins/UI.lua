@@ -1,4 +1,4 @@
----@diagnostic disable: assign-type-mismatchuiUIUI
+---@diagnostic disable: assign-type-mismatchuiUIUIui
 return {
 
 	{ "norcalli/nvim-colorizer.lua" },
@@ -111,11 +111,16 @@ return {
 		"akinsho/bufferline.nvim",
 		version = "*",
 		config = function()
+			-- 1. Bufferline Setup
 			require("bufferline").setup({
 				options = {
-					separator_style = "slope",
+					-- separator_style = "slope",
 				},
 			})
+
+			-- 2. Add the snippet for transparent.nvim
+			-- This ensures all bufferline highlights are made transparent
+			require("transparent").clear_prefix("BufferLine")
 		end,
 	},
 
@@ -324,8 +329,11 @@ return {
 	},
 	{
 		"xiyaowong/transparent.nvim",
+		lazy = false, -- THIS IS CRITICAL
+		priority = 1000,
 		config = function()
 			-- Optional, you don't have to run setup.
+			require("transparent").clear_prefix("BufferLine")
 			require("transparent").setup({
 				-- table: default groups
 				groups = {
@@ -356,7 +364,7 @@ return {
 					"EndOfBuffer",
 				},
 				-- table: additional groups that should be cleared
-				extra_groups = { "NormalFloat" },
+				extra_groups = { "NormalFloat", "FloatBorder", "FloatTitle", "" },
 				-- table: groups you don't want to clear
 				exclude_groups = {},
 				-- function: code to be executed after highlight groups are cleared
