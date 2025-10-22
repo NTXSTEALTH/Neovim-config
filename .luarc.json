@@ -2,7 +2,8 @@
     "diagnostics.disable": [
         "undefined-doc-name",
         "unused-local",
-        "missing-fields"
+        "missing-fields",
+        "unknown-diag-code"
     ],
     "diagnostics.globals": [
         "lsp"
