@@ -17,7 +17,6 @@ vim.opt.spelllang = { "en_us" }
 vim.opt.spell = true
 
 vim.opt.clipboard = "unnamedplus"
-vim.opt.termguicolors = true
 
 vim.opt.showmode = false
 vim.opt.swapfile = false

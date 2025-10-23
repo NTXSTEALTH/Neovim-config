@@ -1,7 +1,12 @@
 ---@diagnostic disable: assign-type-mismatchuiUIUIui
 return {
 
-	{ "norcalli/nvim-colorizer.lua" },
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
@@ -161,7 +166,7 @@ return {
 			-- OPTIONAL:
 			-- `nvim-notify` is only needed, if you want to use the notification view.
 			--   If not available, we use `mini` as the fallback
-			"rcarriga/nvim-notify",
+			-- "rcarriga/nvim-notify",
 		},
 	},
 	{
