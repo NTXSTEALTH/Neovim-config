@@ -17,6 +17,7 @@ local servers = {
 	"stylua",
 
 	"rust_analyzer",
+	"nu",
 }
 
 -- capabilities.lua or near your LSP setup
@@ -44,6 +45,8 @@ vim.lsp.enable({
 	"tailwindcss", --NOTE: tailwindcss Lsp
 
 	"clangd", --NOTE: C Lsp
+
+	"Nushell", --NOTE: NuShell lsp
 })
 
 vim.diagnostic.config({
@@ -131,6 +134,15 @@ return {
 
 				markdown = { "prettierd" },
 			}
+		end,
+	},
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		event = "VeryLazy",
+		priority = 1000,
+		config = function()
+			require("tiny-inline-diagnostic").setup()
+			vim.diagnostic.config({ virtual_text = false }) -- Disable Neovim's default virtual text diagnostics
 		end,
 	},
 }

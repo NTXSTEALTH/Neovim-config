@@ -1,4 +1,4 @@
----@diagnostic disable: assign-type-mismatchuiUIUIui
+---@diagnostic disable: assign-type-mismatchu
 return {
 
 	{
@@ -76,7 +76,8 @@ return {
 				},
 				sections = {
 					lualine_a = { "mode" },
-					lualine_b = {
+					lualine_b = { "filename" },
+					lualine_c = {
 						"branch",
 						"diff",
 						"diagnostics",
@@ -91,9 +92,8 @@ return {
 							end,
 						},
 					},
-					lualine_c = { "filename" },
-					lualine_x = { "encoding", "fileformat", "filetype" },
-					lualine_y = { "progress" },
+					lualine_x = { { "searchcount" }, { "progress" } },
+					lualine_y = { "lsp_status" },
 					lualine_z = { "location" },
 				},
 				inactive_sections = {
@@ -276,6 +276,7 @@ return {
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
 		keys = {
+
 			{
 				"<leader>xx",
 				"<cmd>Trouble diagnostics toggle<cr>",
@@ -369,7 +370,7 @@ return {
 					"EndOfBuffer",
 				},
 				-- table: additional groups that should be cleared
-				extra_groups = { "NormalFloat", "FloatBorder", "FloatTitle", "" },
+				extra_groups = { "NormalFloat", "FloatBorder", "FloatTitle" },
 				-- table: groups you don't want to clear
 				exclude_groups = {},
 				-- function: code to be executed after highlight groups are cleared
@@ -377,5 +378,12 @@ return {
 				on_clear = function() end,
 			})
 		end,
+	},
+	{
+		"declancm/cinnamon.nvim",
+		version = "*", -- use latest release
+		opts = {
+			-- change default options here
+		},
 	},
 }

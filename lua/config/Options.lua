@@ -71,9 +71,6 @@ local function force_bufferline_transparent()
 	vim.api.nvim_set_hl(0, "TabLine", { bg = "NONE" }) -- Background for unselected tabs (Bufferline usually uses this)
 	vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE" }) -- Background for the area after the last tab
 	vim.api.nvim_set_hl(0, "TabLineSel", { bg = "NONE" }) -- Background for the selected tab (Bufferline usually overrides this)
-
-	-- OPTIONAL: If transparency is still an issue, you can clear the Normal background again
-	-- vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
 end
 
 _G.ForceBufferlineTransparent = force_bufferline_transparent
