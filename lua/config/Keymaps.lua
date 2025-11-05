@@ -57,23 +57,12 @@ vim.keymap.set("n", "<leader>fF", vim.lsp.buf.format, { desc = "Format File" })
 vim.keymap.set({ "n", "v" }, "Y", '"+y', { desc = "Yank to clipboard" })
 
 -- NOTE: Terminal
+
 vim.keymap.set(
 	"n",
-	"<leader>tt",
-	"<CMD>ToggleTerm direction=vertical size=60 name=main<CR>",
-	{ desc = "Open Terminal" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>tf",
+	"<leader>t",
 	"<CMD>ToggleTerm direction=float size=60 name=floating<CR>",
 	{ desc = "Open Floating Terminal" }
-)
-vim.keymap.set(
-	"n",
-	"<leader>tT",
-	"<CMD>ToggleTerm direction=tab size=60 name=floating<CR>",
-	{ desc = "Open Terminal Tab" }
 )
 
 -- NOTE: Code Runner bind

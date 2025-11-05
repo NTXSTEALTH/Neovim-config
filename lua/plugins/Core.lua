@@ -522,7 +522,7 @@ return {
 			require("code_runner").setup({
 				mode = "toggleterm",
 				term = {
-					position = "horizontal",
+					position = "float",
 					size = 10,
 				},
 				filetype = {
@@ -550,6 +550,7 @@ return {
 		cmd = "ToggleTerm",
 		event = "VeryLazy",
 		opts = { --[[ things you want to change go here]]
+			persist_size = true,
 			shell = "C:\\Users\\rohit\\AppData\\Local\\Programs\\nu\\bin\\nu.exe",
 			vim.api.nvim_set_keymap(
 				"t",
@@ -559,7 +560,7 @@ return {
 			),
 			vim.api.nvim_set_keymap(
 				"t",
-				"A-j>",
+				"<A-j>",
 				"<C-\\><C-N>",
 				{ noremap = true, silent = true, desc = "Exit terminal mode" }
 			),

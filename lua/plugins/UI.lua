@@ -262,7 +262,7 @@ return {
 				{ "<leader>b8", icon = "8" },
 				{ "<leader>b9", icon = "9" },
 
-				{ "<leader>t", group = "Terminal Options", icon = "" }, -- NOTE: Terminal Options
+				{ "<leader>t", icon = "" }, -- NOTE: Terminal Options
 
 				{ "<leader>a", group = "AI", icon = "" }, -- NOTE: AI Options
 
