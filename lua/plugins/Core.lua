@@ -528,7 +528,7 @@ return {
 				filetype = {
 					python = "uv run $fileName",
 					javascript = "node $fileName",
-					typescript = "deno run $fileName",
+					typescript = "deno run --allow-env --allow-sys --allow-read --allow-net $fileName",
 					c = {
 						"cd $dir ;",
 						"gcc $fileName -o $fileNameWithoutExt.exe ;",

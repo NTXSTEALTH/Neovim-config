@@ -184,6 +184,7 @@ return {
 			"rktjmp/lush.nvim",
 			"nyoom-engineering/nyoom.nvim",
 			"olimorris/onedarkpro.nvim",
+			"rose-pine/neovim",
 			async = true,
 			activity = true,
 		},
