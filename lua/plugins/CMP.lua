@@ -3,7 +3,7 @@ return {
 	{
 		"saghen/blink.cmp",
 		-- optional: provides snippets for the snippet source
-		dependencies = { "rafamadriz/friendly-snippets" },
+		dependencies = { "L3MON4D3/LuaSnip", "rafamadriz/friendly-snippets" },
 		build = "cargo build --release",
 
 		-- use a release tag to download pre-built binaries
@@ -22,7 +22,7 @@ return {
 			-- 'none' for no mappings
 			--
 			-- All presets have the following mappings:
-			-- C-space: Open menu or open docs if already open
+			-- C-space: Open menu or open docs if already opencmp
 			-- C-n/C-p or Up/Down: Select next/previous item
 			-- C-e: Hide menu
 			-- C-k: Toggle signature help (if signature.enabled = true)
@@ -59,6 +59,9 @@ return {
 
 			-- Default list of enabled providers defined so that you can extend it
 			-- elsewhere in your config, without redefining it, due to `opts_extend`
+			-- In your blink.cmp options:
+
+			-- Change the 'sources' table to include the actual Luasnip source
 			sources = {
 				default = { "snippets", "lsp", "path", "buffer" },
 			},
