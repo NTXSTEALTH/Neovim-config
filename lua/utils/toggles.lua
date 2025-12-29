@@ -29,17 +29,17 @@ function M.toggle_transparency()
 	state_manager.write(state)
 end
 
---- Function to Codeium.
+--- Function to Toggle Codeium.
 function M.toggle_codeium()
-	if require("neocodeium").get_status()[1] == 0 then
-		vim.cmd("NeoCodeium enable")
+	vim.cmd({ cmd = "NeoCodeium", args = { "toggle" } })
+	local codeium_status = require("neocodeium").get_status()
+	if codeium_status == 0 then
+		vim.notify("Codeium Disabled")
+	elseif codeium_status == 1 then
+		vim.notify("Codeium Enabled")
 	else
-		vim.cmd("NeoCodeium disable")
+		vim.notify("Codeium Error" .. codeium_status)
 	end
-	local state = state_manager.read()
-	state["bg_transparent"] = vim.g.bg_transparent and "true" or "false"
-	state_manager.write(state)
 end
--- set("n", "<leader>Ea", "<CMD>NeoCodeium toggle<CR>", { desc = "Disable Codeium" })
 
 return M

@@ -21,7 +21,7 @@ set("n", "<leader>um", "<CMD>:Mason<CR>", { desc = "Open Mason" })
 --- Toggles
 set("n", "<leader>t", "<CMD>ToggleTerm direction=float size=60 name=floating<CR>", { desc = "Open Floating Terminal" })
 set("n", "<leader>ljs", Toggle.toggle_live_server, { desc = "Toggle live server" })
-set("n", "<leader>Ea", Toggle.toggle_codeium, { desc = "Disable Codeium" })
+set("n", "<leader>sea", Toggle.toggle_codeium, { desc = "Toggle Codeium" })
 
 --- LSP
 set("n", "gl", vim.diagnostic.open_float, { desc = "Open Diagnostics Float" })
