@@ -1,11 +1,10 @@
 return {
 	{
 		"linux-cultist/venv-selector.nvim",
-		event = "BufReadPre",
 		dependencies = {
-			{ "neovim/nvim-lspconfig", event = "BufReadPre" },
+			{ "neovim/nvim-lspconfig", ft = { "python" } },
 		},
-		ft = "python", -- Load when opening Python files
+		ft = { "python" },
 		keys = {
 			{ "<leader>lpv", "<cmd>VenvSelect<cr>", desc = "Select Virtual Environment" }, -- Open picker on keymap
 		},
