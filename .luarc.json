@@ -1,11 +1,11 @@
 {
+    "diagnostics.globals": [
+        "vim",
+        "Snacks"
+    ],
     "diagnostics.disable": [
         "undefined-doc-name",
-        "unused-local",
-        "missing-fields",
-        "unknown-diag-code"
-    ],
-    "diagnostics.globals": [
-        "lsp"
+        "undefined-global",
+        "deprecated"
     ]
 }

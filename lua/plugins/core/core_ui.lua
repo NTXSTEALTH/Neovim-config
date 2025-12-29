@@ -1,14 +1,8 @@
----@diagnostic disable: assign-type-mismatchu
 return {
 
 	{
-		"norcalli/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
-	},
-	{
 		"lukas-reineke/indent-blankline.nvim",
+		event = "BufReadPre",
 		config = function()
 			local highlight = {
 				"RainbowRed",
@@ -19,10 +13,7 @@ return {
 				"RainbowViolet",
 				"RainbowCyan",
 			}
-
 			local hooks = require("ibl.hooks")
-			-- create the highlight groups in the highlight setup hook, so they are reset
-			-- every time the colorscheme changes
 			hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
 				vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
 				vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
@@ -39,7 +30,13 @@ return {
 
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		event = "VeryLazy",
+		dependencies = {
+			{
+				"nvim-tree/nvim-web-devicons",
+				event = "VeryLazy",
+			},
+		},
 		config = function()
 			require("lualine").setup({
 				options = {
@@ -111,64 +108,6 @@ return {
 			})
 		end,
 	},
-
-	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		config = function()
-			-- 1. Bufferline Setup
-			require("bufferline").setup({
-				options = {
-					-- separator_style = "slope",
-				},
-			})
-
-			-- 2. Add the snippet for transparent.nvim
-			-- This ensures all bufferline highlights are made transparent
-			require("transparent").clear_prefix("BufferLine")
-		end,
-	},
-
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-			lsp = {
-				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
-				override = {
-					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-					["vim.lsp.util.stylize_markdown"] = true,
-					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
-				},
-			},
-			-- you can enable a preset for easier configuration
-			notify = {
-				-- Noice can be used as `vim.notify` so you can route any notification like other messages
-				-- Notification messages have their level and other properties set.
-				-- event is always "notify" and kind can be any log level as a string
-				-- The default routes will forward notifications to nvim-notify
-				-- Benefit of using Noice for this is the routing and consistent history view
-				enabled = true,
-				view = "notify",
-			},
-			presets = {
-				bottom_search = false, -- use a classic bottom cmdline for search
-				command_palette = true, -- position the cmdline and popupmenu together
-				long_message_to_split = true, -- long messages will be sent to a split
-				inc_rename = false, -- enables an input dialog for inc-rename.nvim
-				lsp_doc_border = true, -- add a border to hover docs and signature help
-			},
-			-- add any options here
-		},
-		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			-- `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
-			-- "rcarriga/nvim-notify",
-		},
-	},
 	{
 		"lmantw/themify.nvim",
 
@@ -194,11 +133,14 @@ return {
 		event = "VeryLazy",
 		opts = {
 			preset = "helix",
-			-- ignore_missing = false,
+
+			win = {
+				border = false,
+				padding = { 1, 3 },
+			},
 			plugins = {
 				marks = true, -- shows a list of your marks on ' and `
 				registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-				-- the presets plugin, adds help for a bunch of default keybindings in Neovim
 				-- No actual key bindings are created
 				spelling = {
 					enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
@@ -215,9 +157,13 @@ return {
 				},
 			},
 		},
+
 		config = function(_, opts)
 			local wk = require("which-key")
+			vim.g.transparent_enabled = false
+
 			wk.setup(opts)
+
 			wk.add({
 				{ "<leader>l", icon = "󰒲" }, -- NOTE: Lazy GUI
 				{ "<leader>x", group = "Diagnostics", icon = "" }, -- NOTE: trouble GUI
@@ -226,42 +172,64 @@ return {
 				{ "<leader>f", group = "File", icon = "" }, -- NOTE: File GUI
 				{ "<leader>fs", icon = "󰑓" }, -- NOTE: Find File GUI
 				{ "<leader><leader>", icon = "" }, -- NOTE: Find File GUI
-				{ "<leader>fp", icon = "" }, -- NOTE: Find Project GUI
-				{ "<leader>fr", icon = "" }, -- NOTE: Find Recent GUI
-				{ "<leader>g", group = "Git" }, -- NOTE: Git GUI
-				{ "<leader>gl", icon = "󱀄" }, -- NOTE: Git Log GUI
-				{ "<leader>gs", icon = "󰩮" }, -- NOTE: Git Status GUI
-				{ "<leader>gb", icon = "" }, -- NOTE: Git Branch GUI
-				{ "<leader>gS", icon = "" }, -- NOTE: Git Stash GUI
 				{ "<leader>s", group = "Utils", icon = "󰙠" }, --NOTE: Utils GUI
 				{ "<leader>u", group = "UI" }, -- NOTE: UI Options GUI
 				{ "<leader>c", group = "Code" }, -- NOTE: Code Options GUI
-				{ "<leader>cr", icon = "" }, -- NOTE: Run Code
-				{ "<leader>cf", icon = "" }, -- NOTE: Run File
 				{ "m", group = "Mini", icon = "󰘨" }, -- NOTE: Mini Options
 				{ "<leader>w", icon = "" }, --NOTE: Save File
 
-				{ "<leader>b", group = "Tabs", icon = "" }, -- NOTE: Tabs
-				{ "<leader>bc", icon = "󰛉" }, --NOTE: Close Tab
-				{ "<leader>br", icon = "󰦛" }, --NOTE: Restore Tab
-				{ "<leader>bb", icon = "" }, --NOTE: Prev Tab
-				{ "<leader>bn", icon = "" }, --NOTE: Next Tab
-				{ "<leader>bB", icon = "" }, --NOTE: Move Tab Right
-				{ "<leader>bN", icon = "" }, --NOTE: Move Tab Left
+				{
+					"<leader>ljs",
+					icon = function()
+						if vim.g.live_server then
+							return ""
+						else
+							return ""
+						end
+					end,
+				},
+				{
+					"<leader>uB",
+					icon = function()
+						if vim.g.transparent_enabled then
+							return "󰔡"
+						else
+							return ""
+						end
+					end,
+				}, --- NOTE: Transparency Toggle
 
-				{ "<leader>cS", group = "Live Server", icon = "" }, --NOTE: Live Server
-				{ "<leader>cSs", icon = "" }, --NOTE: Live Server Start
-				{ "<leader>cSS", icon = "" }, --NOTE: Live Server Stop
+				{ "<leader>l", group = "Languages", icon = "󰅲" }, --- NOTE: Programming Languages
+				{ "<leader>lp", group = "Python", icon = "󰌠" }, --- NOTE: Python group
+				{ "<leader>lj", group = "Javascript", icon = "" }, --- NOTE: Javascript group
 
-				{ "<leader>b1", icon = "1" },
-				{ "<leader>b2", icon = "2" },
-				{ "<leader>b3", icon = "3" },
-				{ "<leader>b4", icon = "4" },
-				{ "<leader>b5", icon = "5" },
-				{ "<leader>b6", icon = "6" },
-				{ "<leader>b7", icon = "7" },
-				{ "<leader>b8", icon = "8" },
-				{ "<leader>b9", icon = "9" },
+				-- { "<leader>cr", icon = "" }, -- NOTE: Run Code
+				-- { "<leader>cf", icon = "" }, -- NOTE: Run File
+
+				{ "<leader>g", group = "Git" }, -- NOTE: Git GUI
+				-- { "<leader>fp", icon = "" }, -- NOTE: Find Project GUI
+				-- { "<leader>fr", icon = "" }, -- NOTE: Find Recent GUI
+				-- { "<leader>gl", icon = "󱀄" }, -- NOTE: Git Log GUI
+				-- { "<leader>gs", icon = "󰩮" }, -- NOTE: Git Status GUI
+				-- { "<leader>gb", icon = "" }, -- NOTE: Git Branch GUI
+				-- { "<leader>gS", icon = "" }, -- NOTE: Git Stash GUI
+
+				-- { "<leader>b", group = "Tabs", icon = "" }, -- NOTE: Tabs
+				-- { "<leader>bc", icon = "󰛉" }, --NOTE: Close Tab
+				-- { "<leader>br", icon = "󰦛" }, --NOTE: Restore Tab
+				-- { "<leader>bb", icon = "" }, --NOTE: Prev Tab
+				-- { "<leader>bn", icon = "" }, --NOTE: Next Tab
+				-- { "<leader>bB", icon = "" }, --NOTE: Move Tab Right
+				-- { "<leader>bN", icon = "" }, --NOTE: Move Tab Left
+				-- { "<leader>b1", icon = "1" },
+				-- { "<leader>b2", icon = "2" },
+				-- { "<leader>b3", icon = "3" },
+				-- { "<leader>b4", icon = "4" },
+				-- { "<leader>b5", icon = "5" },
+				-- { "<leader>b6", icon = "6" },
+				-- { "<leader>b7", icon = "7" },
+				-- { "<leader>b8", icon = "8" },
+				-- { "<leader>b9", icon = "9" },
 
 				{ "<leader>t", icon = "" }, -- NOTE: Terminal Options
 
@@ -273,47 +241,8 @@ return {
 		end,
 	},
 	{
-		"folke/trouble.nvim",
-		opts = {}, -- for default options, refer to the configuration section for custom setup.
-		cmd = "Trouble",
-		keys = {
-
-			{
-				"<leader>xx",
-				"<cmd>Trouble diagnostics toggle<cr>",
-				desc = "Diagnostics (Trouble)",
-			},
-			{
-				"<leader>xX",
-				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-				desc = "Buffer Diagnostics (Trouble)",
-			},
-			{
-				"<leader>cs",
-				"<cmd>Trouble symbols toggle focus=false<cr>",
-				desc = "Symbols (Trouble)",
-			},
-			{
-				"<leader>cl",
-				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-				desc = "LSP Definitions / references / ... (Trouble)",
-			},
-
-			{
-				"<leader>xL",
-				"<cmd>Trouble loclist toggle<cr>",
-				desc = "Location List (Trouble)",
-			},
-			{
-				"<leader>xQ",
-				"<cmd>Trouble qflist toggle<cr>",
-				desc = "Quickfix List (Trouble)",
-			},
-		},
-	},
-	{
 		"sphamba/smear-cursor.nvim",
-
+		event = "VeryLazy",
 		opts = {
 			-- Smear cursor when switching buffers or windows.
 			smear_between_buffers = true,
@@ -339,8 +268,6 @@ return {
 		lazy = false, -- THIS IS CRITICAL
 		priority = 1000,
 		config = function()
-			-- Optional, you don't have to run setup.
-			require("transparent").clear_prefix("BufferLine")
 			require("transparent").setup({
 				-- table: default groups
 				groups = {
@@ -382,9 +309,19 @@ return {
 	},
 	{
 		"declancm/cinnamon.nvim",
+		event = "VeryLazy",
 		version = "*", -- use latest release
 		opts = {
 			-- change default options here
+		},
+	},
+	-- lazy.nvim
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {},
+		dependencies = {
+			{ "MunifTanjim/nui.nvim", event = "VeryLazy" },
 		},
 	},
 }
