@@ -1,10 +1,6 @@
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "html", "javascriptreact", "typescriptreact" },
-	callback = function(args)
-		vim.lsp.start({
-			name = "tailwindcss",
-			bufnr = args.buf,
-			root_dir = vim.loop.cwd(), -- FORCE root
-		})
+--- NOTE: Get all the enabled states.
+vim.api.nvim_create_autocmd("vimEnter", {
+	callback = function()
+		require("config.startup")
 	end,
 })

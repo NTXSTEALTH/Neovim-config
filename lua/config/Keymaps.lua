@@ -3,17 +3,7 @@
 --- NOTE: Variables / State
 local set = vim.keymap.set
 
---- NOTE: Toggle Functions
-
---- Function to toggle live server
-function Toggle_live_server()
-	vim.g.live_server = not vim.g.live_server
-	if vim.g.live_server then
-		vim.cmd("LiveServerStart")
-	else
-		vim.cmd("LiveServerStop")
-	end
-end
+Toggle = require("utils.toggles")
 
 --- Basic binds
 set("i", "<A-j>", "<Esc>", { noremap = true, silent = true })
@@ -22,7 +12,7 @@ set("n", "<leader>q", "<cmd>:q!<cr>", { desc = "Quit" })
 
 --- GUI / UI Binds
 set("n", "<leader><leader>", "<CMD>Telescope find_files<CR>", { desc = "Find Files" })
-set("n", "<leader>uB", "<CMD>TransparentToggle<CR>", { desc = "Toggle Transparency", noremap = true, silent = true })
+set("n", "<leader>uB", Toggle.toggle_transparency, { desc = "Toggle Transparency", noremap = true, silent = true })
 
 set("n", "<leader>L", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 set("n", "<leader>ut", "<CMD>:Themify<CR>", { desc = "Open Themify GUI" })
@@ -30,7 +20,8 @@ set("n", "<leader>um", "<CMD>:Mason<CR>", { desc = "Open Mason" })
 
 --- Toggles
 set("n", "<leader>t", "<CMD>ToggleTerm direction=float size=60 name=floating<CR>", { desc = "Open Floating Terminal" })
-set("n", "<leader>ljs", Toggle_live_server, { desc = "Toggle live server" })
+set("n", "<leader>ljs", Toggle.toggle_live_server, { desc = "Toggle live server" })
+set("n", "<leader>Ea", Toggle.toggle_codeium, { desc = "Disable Codeium" })
 
 --- LSP
 set("n", "gl", vim.diagnostic.open_float, { desc = "Open Diagnostics Float" })

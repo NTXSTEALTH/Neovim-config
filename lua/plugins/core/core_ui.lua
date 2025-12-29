@@ -160,7 +160,6 @@ return {
 
 		config = function(_, opts)
 			local wk = require("which-key")
-			vim.g.transparent_enabled = false
 
 			wk.setup(opts)
 
@@ -168,9 +167,6 @@ return {
 				{ "<leader>l", icon = "󰒲" }, -- NOTE: Lazy GUI
 				{ "<leader>x", group = "Diagnostics", icon = "" }, -- NOTE: trouble GUI
 				{ "<leader>e", icon = "" }, -- NOTE: Neo Tree GUI
-				{ "<leader>/", icon = "󱁴" }, -- NOTE: File GREP GUI
-				{ "<leader>f", group = "File", icon = "" }, -- NOTE: File GUI
-				{ "<leader>fs", icon = "󰑓" }, -- NOTE: Find File GUI
 				{ "<leader><leader>", icon = "" }, -- NOTE: Find File GUI
 				{ "<leader>s", group = "Utils", icon = "󰙠" }, --NOTE: Utils GUI
 				{ "<leader>u", group = "UI" }, -- NOTE: UI Options GUI
@@ -191,7 +187,7 @@ return {
 				{
 					"<leader>uB",
 					icon = function()
-						if vim.g.transparent_enabled then
+						if vim.g.bg_transparent then
 							return "󰔡"
 						else
 							return ""
