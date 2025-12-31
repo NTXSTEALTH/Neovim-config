@@ -31,7 +31,7 @@ vim.g.multi_cursor = true
 vim.g.smart_backspace = true
 
 --- A smart_backspace plugins that manages indentation.
-vim.g.auot_session = false
+vim.g.auto_session = true
 
 return {
 	{
@@ -308,14 +308,14 @@ return {
 	},
 	{
 		"rmagatti/auto-session",
-		enabled = vim.g.auot_session,
+		enabled = vim.g.auto_session,
 		lazy = false,
 
 		---enables autocomplete for opts
 		---@module "auto-session"
 		---@type AutoSession.Config
 		opts = {
-			suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+			suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/", "C:/Users/rohit/AppData/Local/nvim" },
 			-- log_level = 'debug',
 		},
 	},

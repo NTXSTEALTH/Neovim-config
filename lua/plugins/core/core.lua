@@ -20,18 +20,18 @@ return {
 					"css",
 					"nu",
 				},
+				auto_install = true,
+				sync_install = false,
 				highlight = { enable = true },
 				indent = { enable = true },
 			})
 
-			-- 🔑 Attach Tree-sitter to ALL existing buffers
 			for _, buf in ipairs(vim.api.nvim_list_bufs()) do
 				if vim.api.nvim_buf_is_loaded(buf) then
 					pcall(vim.treesitter.start, buf)
 				end
 			end
 
-			-- 🔑 Attach Tree-sitter to future buffers
 			vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "FileType" }, {
 				callback = function(args)
 					pcall(vim.treesitter.start, args.buf)

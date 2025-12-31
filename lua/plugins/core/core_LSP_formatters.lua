@@ -50,10 +50,18 @@ return {
 				markdown = { "prettierd" },
 
 				c = { "clangd-format" },
+				nu = { "topiary_nu" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
 				lsp_fallback = true,
+			},
+			formatters = {
+				topiary_nu = {
+					command = "topiary",
+					args = { "format", "--language", "nu" },
+					-- Adjust 'command' and 'args' if your topiary installation requires a different path or flags
+				},
 			},
 		},
 	},
