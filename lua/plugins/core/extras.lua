@@ -36,6 +36,9 @@ vim.g.auto_session = true
 --- A better UI for diagnostics.
 vim.g.trouble = true
 
+--- A plugin to render markdown files in nvim.
+vim.g.render_markdown = true
+
 return {
 	{
 		"folke/ts-comments.nvim",
@@ -359,5 +362,16 @@ return {
 				desc = "Quickfix List (Trouble)",
 			},
 		},
+	},
+
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		enabled = vim.g.render_markdown,
+		ft = "markdown",
+
+		dependencies = {},
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		opts = {},
 	},
 }
