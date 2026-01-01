@@ -26,6 +26,7 @@ require("lazy").setup({
 		{ import = "plugins.web" },
 		{ import = "plugins.python" },
 		{ import = "plugins.lua" },
+		{ import = "plugins.exp" },
 	},
 	install = { colorscheme = { "catppuccin" } },
 	-- automatically check for plugin updates
