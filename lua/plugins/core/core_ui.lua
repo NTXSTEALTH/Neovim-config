@@ -1,3 +1,14 @@
+--- NOTE: Contains all the core UI plugins
+
+--- Indent-blankline        : highlight indented lines.
+--- Lualine                 : Status line plugin.
+--- Themify                 : Theme manager.
+--- WhichKey                : Displays a popup with possible key bindings of the current mode.
+--- Smear-cursor            : Smooth cursor movement.
+--- Transparent             : Transparent background.
+--- Cinnamon                : Smooth scrolling.
+--- Noice                   : Better UI.
+
 return {
 
 	{
@@ -209,23 +220,6 @@ return {
 				-- { "<leader>gs", icon = "󰩮" }, -- NOTE: Git Status GUI
 				-- { "<leader>gb", icon = "" }, -- NOTE: Git Branch GUI
 				-- { "<leader>gS", icon = "" }, -- NOTE: Git Stash GUI
-
-				-- { "<leader>b", group = "Tabs", icon = "" }, -- NOTE: Tabs
-				-- { "<leader>bc", icon = "󰛉" }, --NOTE: Close Tab
-				-- { "<leader>br", icon = "󰦛" }, --NOTE: Restore Tab
-				-- { "<leader>bb", icon = "" }, --NOTE: Prev Tab
-				-- { "<leader>bn", icon = "" }, --NOTE: Next Tab
-				-- { "<leader>bB", icon = "" }, --NOTE: Move Tab Right
-				-- { "<leader>bN", icon = "" }, --NOTE: Move Tab Left
-				-- { "<leader>b1", icon = "1" },
-				-- { "<leader>b2", icon = "2" },
-				-- { "<leader>b3", icon = "3" },
-				-- { "<leader>b4", icon = "4" },
-				-- { "<leader>b5", icon = "5" },
-				-- { "<leader>b6", icon = "6" },
-				-- { "<leader>b7", icon = "7" },
-				-- { "<leader>b8", icon = "8" },
-				-- { "<leader>b9", icon = "9" },
 
 				{ "<leader>t", icon = "" }, -- NOTE: Terminal Options
 

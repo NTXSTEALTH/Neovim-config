@@ -1,21 +1,34 @@
+--- NOTE: This File houses all the LSP and Formatter Plugins and their configurations.
+
+--- Conform          : Formatter
+--- Mason            : LSP Manager
+--- Blink            : CMP
+--- Colorful_menu    : CMP customization.
+
 vim.g.colorful_menu = true
 vim.lsp.inlay_hint.enable(true)
 
 --- NOTE: Enabling LSP's
 vim.lsp.enable({
+
+	--- LUA
 	"lua_ls",
 
+	--- Python
 	"ruff",
 	"basedpyright",
 
+	--- Web / JS / TS
 	"ts_ls",
 	"emmet-ls",
 	"cssls",
 	"eslint",
 	"tailwindcss",
 
+	--- C / C++
 	--- "clangd",
-	---
+
+	--- Nushell
 	--- "Nushell",
 })
 

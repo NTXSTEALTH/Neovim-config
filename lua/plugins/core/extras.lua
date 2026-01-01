@@ -30,8 +30,11 @@ vim.g.multi_cursor = true
 --- A smart_backspace plugins that manages indentation.
 vim.g.smart_backspace = true
 
---- A smart_backspace plugins that manages indentation.
+--- A session manager for neovim.
 vim.g.auto_session = true
+
+--- A better UI for diagnostics.
+vim.g.trouble = true
 
 return {
 	{
@@ -317,6 +320,44 @@ return {
 		opts = {
 			suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/", "C:/Users/rohit/AppData/Local/nvim" },
 			-- log_level = 'debug',
+		},
+	},
+	{
+		"folke/trouble.nvim",
+		enabled = vim.g.trouble,
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+			{
+				"<leader>cs",
+				"<cmd>Trouble symbols toggle focus=false<cr>",
+				desc = "Symbols (Trouble)",
+			},
+			{
+				"<leader>cl",
+				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+				desc = "LSP Definitions / references / ... (Trouble)",
+			},
+			{
+				"<leader>xL",
+				"<cmd>Trouble loclist toggle<cr>",
+				desc = "Location List (Trouble)",
+			},
+			{
+				"<leader>xQ",
+				"<cmd>Trouble qflist toggle<cr>",
+				desc = "Quickfix List (Trouble)",
+			},
 		},
 	},
 }

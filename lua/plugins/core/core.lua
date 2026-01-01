@@ -1,3 +1,11 @@
+--- NOTE: This config file contains all the core plugins for the editor
+
+--- Treesitter : Syntax Highlighting.
+--- Snacks     : collection of utility functions.
+--- Mini       : collection of QOL motions and utilities.
+--- Flash      : A fast positiing plugin.
+--- Snipe      : Buffer manager / selector
+
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -348,6 +356,7 @@ return {
 
 			require("mini.comment").setup({})
 			require("mini.diff").setup({})
+			require("mini.align").setup({})
 		end,
 	},
 
@@ -398,5 +407,19 @@ return {
 				desc = "Toggle Flash Search",
 			},
 		},
+	},
+
+	{
+		"leath-dub/snipe.nvim",
+		keys = {
+			{
+				"gb",
+				function()
+					require("snipe").open_buffer_menu()
+				end,
+				desc = "Open Snipe buffer menu",
+			},
+		},
+		opts = {},
 	},
 }
