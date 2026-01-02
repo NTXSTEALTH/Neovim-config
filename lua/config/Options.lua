@@ -1,12 +1,12 @@
--- vim.notify(vim.fn.stdpath("state"))
+--- NOTE: Houses all nvim setting changes and custom overrides.
 
--- NOTE: Tabs are 4 spaces
+--- DESC: Tabs are 4 spaces
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
--- NOTE: Editor options.
+-- : Editor options.
 -- vim.cmd.colorscheme("catppuccin")
 -- vim.opt.fileformats = "unix,dos"
 

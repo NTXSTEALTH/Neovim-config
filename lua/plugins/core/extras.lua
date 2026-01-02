@@ -52,8 +52,27 @@ return {
 		"folke/todo-comments.nvim",
 		enabled = vim.g.todo_comments,
 		event = "BufReadPre",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {},
+		dependencies = {},
+		opts = {
+			keywords = {
+				FIX = {
+					icon = " ", -- icon used for the sign, and in search results
+					color = "error", -- can be a hex color, or a named color (see below)
+					alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
+					-- signs = false, -- configure signs for some keywords individually
+				},
+				TODO = { icon = " ", color = "info" },
+				HACK = { icon = " ", color = "warning" },
+				WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+				PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+				NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+				TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+				DESC = { icon = " ", color = "desc" },
+			},
+			colors = {
+				desc = { "#f9e2af" },
+			},
+		},
 	},
 
 	{
@@ -296,7 +315,6 @@ return {
 				end)
 			end)
 
-			-- Customize how cursors look.
 			local hl = vim.api.nvim_set_hl
 			hl(0, "MultiCursorCursor", { reverse = true })
 			hl(0, "MultiCursorVisual", { link = "Visual" })

@@ -1,4 +1,6 @@
---- Util functions
+--- NOTE: Startup function and initialization.
+
+--- DESC: Util functions
 local function toboolean(str)
 	if type(str) ~= "string" then
 		return nil
@@ -13,16 +15,16 @@ local function toboolean(str)
 	return nil
 end
 
---- State manager to toggle the states in the states.json file
+--- DESC: State manager to toggle the states in the states.json file
 State_manager = require("utils.state")
 States = State_manager.read()
 
---- NOTE: State inilization.
+--- DESC: State inilization.
 
 --- Assigning the transparency.
 vim.g.bg_transparent = toboolean(States.bg_transparent)
 
---- NOTE: Basic Autocommands
+--- DESC: Basic Autocommands
 if vim.g.bg_transparent then
 	vim.cmd("TransparentEnable")
 else

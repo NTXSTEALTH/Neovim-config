@@ -1,13 +1,13 @@
 --- NOTE: Contains all the core UI plugins
 
---- Indent-blankline        : highlight indented lines.
---- Lualine                 : Status line plugin.
---- Themify                 : Theme manager.
---- WhichKey                : Displays a popup with possible key bindings of the current mode.
---- Smear-cursor            : Smooth cursor movement.
---- Transparent             : Transparent background.
---- Cinnamon                : Smooth scrolling.
---- Noice                   : Better UI.
+--- Indent-blankline : highlight indented lines.
+--- Lualine          : Status line plugin.
+--- Themify          : Theme manager.
+--- WhichKey         : Displays a popup with possible key bindings of the current mode.
+--- Smear-cursor     : Smooth cursor movement.
+--- Transparent      : Transparent background.
+--- Cinnamon         : Smooth scrolling.
+--- Noice            : Better UI.
 
 return {
 
@@ -126,7 +126,7 @@ return {
 		priority = 999,
 
 		config = {
-			--NOTE: All the installed Themes.
+			--- DESC: All the installed Themes.
 			"catppuccin/nvim",
 			"folke/tokyonight.nvim",
 			"rebelot/kanagawa.nvim",
@@ -150,21 +150,20 @@ return {
 				padding = { 1, 3 },
 			},
 			plugins = {
-				marks = true, -- shows a list of your marks on ' and `
-				registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
-				-- No actual key bindings are created
+				marks = true,
+				registers = true,
 				spelling = {
-					enabled = true, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-					suggestions = 20, -- how many suggestions should be shown in the list?
+					enabled = true,
+					suggestions = 20,
 				},
 				presets = {
-					operators = true, -- adds help for operators like d, y, ...
-					motions = true, -- adds help for motions
-					text_objects = true, -- help for text objects triggered after entering an operator
-					windows = true, -- default bindings on <c-w>
-					nav = true, -- misc bindings to work with windows
-					z = true, -- bindings for folds, spelling and others prefixed with z
-					g = true, -- bindings for prefixed with g
+					operators = true,
+					motions = true,
+					text_objects = true,
+					windows = true,
+					nav = true,
+					z = true,
+					g = true,
 				},
 			},
 		},
@@ -184,6 +183,7 @@ return {
 				{ "<leader>c", group = "Code" }, -- NOTE: Code Options GUI
 				{ "m", group = "Mini", icon = "󰘨" }, -- NOTE: Mini Options
 				{ "<leader>w", icon = "" }, --NOTE: Save File
+				{ "<leader>b", group = "Buffer", icon = "" }, --NOTE: Buffer options
 
 				{
 					"<leader>ljs",
