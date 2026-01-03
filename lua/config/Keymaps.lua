@@ -10,6 +10,9 @@ set("i", "<A-j>", "<Esc>", { noremap = true, silent = true })
 set("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
 set("n", "<leader>q", "<cmd>:q!<cr>", { desc = "Quit" })
 
+set("n", "<leader>bv", "<cmd>vs<cr>", { desc = "Vertical Split" })
+set("n", "<leader>bh", "<cmd>sp<cr>", { desc = "Horizontal Split" })
+
 ---  DESC: GUI / UI Binds
 set("n", "<leader><leader>", "<CMD>Telescope find_files<CR>", { desc = "Find Files" })
 set("n", "<leader>uB", toggle.toggle_transparency, { desc = "Toggle Transparency", noremap = true, silent = true })

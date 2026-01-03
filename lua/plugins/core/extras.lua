@@ -56,10 +56,9 @@ return {
 		opts = {
 			keywords = {
 				FIX = {
-					icon = " ", -- icon used for the sign, and in search results
-					color = "error", -- can be a hex color, or a named color (see below)
-					alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
-					-- signs = false, -- configure signs for some keywords individually
+					icon = " ",
+					color = "error",
+					alt = { "FIXME", "BUG", "FIXIT", "ISSUE" },
 				},
 				TODO = { icon = " ", color = "info" },
 				HACK = { icon = " ", color = "warning" },
@@ -111,7 +110,7 @@ return {
 		enabled = vim.g.toggle_term,
 		cmd = "ToggleTerm",
 		event = "VeryLazy",
-		opts = { --[[ things you want to change go here]]
+		opts = {
 			persist_size = true,
 			shell = "C:\\Users\\rohit\\AppData\\Local\\Programs\\nu\\bin\\nu.exe",
 			vim.api.nvim_set_keymap(
@@ -133,6 +132,7 @@ return {
 			require("toggleterm").setup(opts)
 		end,
 	},
+
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufReadPre",
@@ -200,6 +200,7 @@ return {
 			end,
 		},
 	},
+
 	{
 		"abecodes/tabout.nvim",
 		enabled = vim.g.tabout,
@@ -229,6 +230,7 @@ return {
 		event = "InsertCharPre", -- Set the event to 'InsertCharPre' for better compatibility
 		priority = 1000,
 	},
+
 	{
 		"andymass/vim-matchup",
 		event = "BufReadPre",
@@ -238,6 +240,7 @@ return {
 			},
 		},
 	},
+
 	{
 		"monkoose/neocodeium",
 		enabled = vim.g.neo_codeium,
@@ -248,6 +251,7 @@ return {
 			vim.keymap.set("i", "<A-f>", neocodeium.accept)
 		end,
 	},
+
 	{
 		"jake-stewart/multicursor.nvim",
 		event = "BufReadPre",
@@ -325,11 +329,13 @@ return {
 			hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
 		end,
 	},
+
 	{
 		"qwavies/smart-backspace.nvim",
 		enabled = vim.g.smart_backspace,
 		event = "BufReadPre",
 	},
+
 	{
 		"rmagatti/auto-session",
 		enabled = vim.g.auto_session,
@@ -343,6 +349,7 @@ return {
 			-- log_level = 'debug',
 		},
 	},
+
 	{
 		"folke/trouble.nvim",
 		enabled = vim.g.trouble,
