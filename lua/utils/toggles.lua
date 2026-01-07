@@ -42,4 +42,10 @@ function M.toggle_codeium()
 	end
 end
 
+function M.Run_code()
+	vim.cmd("ToggleTerm direction=float size=60 name=floating")
+	vim.cmd("ToggleTerm direction=float size=60 name=floating")
+	vim.cmd("RunCode")
+end
+
 return M

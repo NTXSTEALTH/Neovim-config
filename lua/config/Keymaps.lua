@@ -43,4 +43,4 @@ set(
 )
 
 --- DESC: MISC Binds
-set("n", "<leader>r", "<CMD>RunCode<CR>", { desc = "Run Code" })
+set("n", "<leader>r", toggle.Run_code, { desc = "Run Code" })
