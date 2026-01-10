@@ -1,5 +1,6 @@
 {
   "auto-session": { "branch": "main", "commit": "292492ab7af4bd8b9e37e28508bc8ce995722fd5" },
+  "bento.nvim": { "branch": "main", "commit": "d5a2edea7ea2a5353778d0996a881be699eb4402" },
   "blink.cmp": { "branch": "main", "commit": "b19413d214068f316c78978b08264ed1c41830ec" },
   "cinnamon.nvim": { "branch": "master", "commit": "ecd211e46a1d4fb0efffbdb2c2bbd59785605870" },
   "code_runner.nvim": { "branch": "main", "commit": "45dfea066a6110abcbc3cd361457ac3cbaefd68b" },
@@ -29,7 +30,6 @@
   "smart-backspace.nvim": { "branch": "main", "commit": "12a34e281289c34e4da4c8589856a3113b58f45b" },
   "smear-cursor.nvim": { "branch": "main", "commit": "c85bdbb25db096fbcf616bc4e1357bd61fe2c199" },
   "snacks.nvim": { "branch": "main", "commit": "fe7cfe9800a182274d0f868a74b7263b8c0c020b" },
-  "snipe.nvim": { "branch": "main", "commit": "d2d196c335919767803f905d573ce66340e33ee6" },
   "tabout.nvim": { "branch": "master", "commit": "9a3499480a8e53dcaa665e2836f287e3b7764009" },
   "tailwind-tools.nvim": { "branch": "master", "commit": "fbe982901d4508b0dcd80e07addf0fcb6dab6c49" },
   "tailwindcss-colorizer-cmp.nvim": { "branch": "main", "commit": "3d3cd95e4a4135c250faf83dd5ed61b8e5502b86" },

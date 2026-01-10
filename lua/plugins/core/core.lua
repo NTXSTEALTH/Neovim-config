@@ -4,7 +4,7 @@
 --- Snacks     : collection of utility functions.
 --- Mini       : collection of QOL motions and utilities.
 --- Flash      : A fast positiing plugin.
---- Snipe      : Buffer manager / selector
+--- bento      : A buffer manager plugin.
 
 return {
 	{
@@ -408,18 +408,5 @@ return {
 			},
 		},
 	},
-
-	{
-		"leath-dub/snipe.nvim",
-		keys = {
-			{
-				"gb",
-				function()
-					require("snipe").open_buffer_menu()
-				end,
-				desc = "Open Snipe buffer menu",
-			},
-		},
-		opts = {},
-	},
+	{ "serhez/bento.nvim", opts = {} },
 }
