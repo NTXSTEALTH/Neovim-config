@@ -9,7 +9,7 @@ This is my custom **Neovim** config, build uing **Lazy** as my plugins manager a
 - Modern UI/UX
 - Configured Formatting, linting, and code intelligence
 
-## categorized plugins overview
+## Categorized plugins overview
 
 ### Plugin Manager & Core
 
