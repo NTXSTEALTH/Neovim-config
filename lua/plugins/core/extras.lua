@@ -27,9 +27,6 @@ vim.g.neo_codeium = true
 --- A smart_backspace plugins that manages indentation.
 vim.g.smart_backspace = true
 
---- A session manager for neovim.
-vim.g.auto_session = true
-
 --- A better UI for diagnostics.
 vim.g.trouble = true
 
@@ -253,20 +250,6 @@ return {
 		"qwavies/smart-backspace.nvim",
 		enabled = vim.g.smart_backspace,
 		event = "BufReadPre",
-	},
-
-	{
-		"rmagatti/auto-session",
-		enabled = vim.g.auto_session,
-		lazy = false,
-
-		---enables autocomplete for opts
-		---@module "auto-session"
-		---@type AutoSession.Config
-		opts = {
-			suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/", "C:/Users/rohit/AppData/Local/nvim" },
-			-- log_level = 'debug',
-		},
 	},
 
 	{

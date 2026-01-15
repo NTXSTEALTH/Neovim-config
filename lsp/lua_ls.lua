@@ -18,8 +18,7 @@ return {
 				maxPreload = 100,
 				preloadFileSize = 100,
 				ignoreDir = {
-					"some_folder_to_ignore",
-					"another_folder",
+					"/",
 				},
 			},
 			telemetry = {

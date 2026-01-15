@@ -4,6 +4,7 @@
 --- Mason            : LSP Manager
 --- Blink            : CMP
 --- Colorful_menu    : CMP customization.
+--- Nvin_lint        :Linting.
 
 vim.g.colorful_menu = true
 vim.lsp.inlay_hint.enable(true)
@@ -15,14 +16,12 @@ vim.lsp.enable({
 	"lua_ls",
 
 	--- Python
-	"ruff",
 	"basedpyright",
 
 	--- Web / JS / TS
 	"ts_ls",
 	"emmet-ls",
 	"cssls",
-	"eslint",
 	"tailwindcss",
 
 	--- C / C++
@@ -50,20 +49,19 @@ return {
 
 				python = { "ruff_format" },
 
-				javascript = { "prettierd" },
-				javascriptreact = { "prettierd" },
-				typescript = { "prettierd" },
-				typescriptreact = { "prettierd" },
-				json = { "prettierd" },
-				css = { "prettierd" },
-				scss = { "prettierd" },
-				html = { "prettierd" },
-				yaml = { "prettierd" },
+				javascript = { "biome" },
+				javascriptreact = { "biome" },
+				typescript = { "biome" },
+				typescriptreact = { "biome" },
+				json = { "biome" },
+				css = { "biome" },
+				scss = { "biome" },
+				html = { "biome" },
+				yaml = { "biome" },
 
 				markdown = { "prettierd" },
 
-				c = { "clangd-format" },
-				nu = { "topiary_nu" },
+				-- c = { "clang-format" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
@@ -87,7 +85,6 @@ return {
 				"cssls",
 				"emmet_ls",
 				"eslint",
-				"svlangserver",
 				"tailwindcss",
 
 				"lua_ls",
@@ -191,6 +188,36 @@ return {
 				},
 				fallback_highlight = "@variable",
 				max_width = 60,
+			})
+		end,
+	},
+
+	--- NOTE: LINTING
+	{
+		"mfussenegger/nvim-lint",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			local lint = require("lint")
+
+			-- 🔧 Map filetypes to linters
+			lint.linters_by_ft = {
+				javascript = { "eslint_d" },
+				typescript = { "eslint_d" },
+				javascriptreact = { "eslint_d" },
+				typescriptreact = { "eslint_d" },
+				python = { "ruff" },
+				-- lua = { "luacheck" },
+				-- sh = { "shellcheck" },
+			}
+
+			-- 🚀 Run linting automatically
+			local augroup = vim.api.nvim_create_augroup("Linting", { clear = true })
+
+			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+				group = augroup,
+				callback = function()
+					lint.try_lint()
+				end,
 			})
 		end,
 	},
