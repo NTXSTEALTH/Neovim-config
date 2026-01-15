@@ -66,7 +66,19 @@ return {
 		---@type snacks.Config
 		opts = {
 			bigfile = { enabled = true },
-			dashboard = { enabled = true },
+			dashboard = {
+				enabled = true,
+				preset = {
+					header = [[
+██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
+██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝
+██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  
+██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  
+╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
+ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
+]],
+				},
+			},
 			explorer = { enabled = true },
 			indent = { enabled = true },
 			input = { enabled = true },
@@ -408,5 +420,6 @@ return {
 			},
 		},
 	},
-	{ "serhez/bento.nvim", opts = {} },
+
+	{ "serhez/bento.nvim", event = "BufReadPre", opts = {} },
 }

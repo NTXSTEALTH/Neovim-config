@@ -4,7 +4,7 @@ local state_manager = require("utils.state")
 
 local M = {}
 
---- Function to toggle live server.
+--- DESC: Function to toggle live server.
 function M.toggle_live_server()
 	vim.g.live_server = not vim.g.live_server
 	if vim.g.live_server then
@@ -14,7 +14,7 @@ function M.toggle_live_server()
 	end
 end
 
---- Function to toggle background Transparency.
+--- DESC: Function to toggle background Transparency.
 function M.toggle_transparency()
 	vim.g.bg_transparent = not vim.g.bg_transparent
 
@@ -29,7 +29,7 @@ function M.toggle_transparency()
 	state_manager.write(state)
 end
 
---- Function to Toggle Codeium.
+--- DESC: Function to Toggle Codeium.
 function M.toggle_codeium()
 	vim.cmd({ cmd = "NeoCodeium", args = { "toggle" } })
 	local codeium_status = require("neocodeium").get_status()

@@ -49,10 +49,14 @@ return {
 			},
 		},
 		config = function()
+			local auto_theme_custom = require("lualine.themes.auto")
+			auto_theme_custom.normal.c.bg = "none"
 			require("lualine").setup({
+
 				options = {
 					icons_enabled = true,
-					theme = "auto",
+					theme = auto_theme_custom,
+
 					component_separators = { left = "", right = "" },
 					section_separators = { left = "", right = "" },
 					disabled_filetypes = {
@@ -170,9 +174,7 @@ return {
 
 		config = function(_, opts)
 			local wk = require("which-key")
-
 			wk.setup(opts)
-
 			wk.add({
 				{ "<leader>l", icon = "󰒲" }, -- NOTE: Lazy GUI
 				{ "<leader>x", group = "Diagnostics", icon = "" }, -- NOTE: trouble GUI
@@ -246,7 +248,8 @@ return {
 
 			-- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
 			-- Smears will blend better on all backgrounds.
-			legacy_computing_symbols_support = false,
+			-- legacy_computing_symbols_support = false,
+			legacy_computing_symbols_support = true,
 
 			-- Smear cursor in insert mode.
 			-- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
