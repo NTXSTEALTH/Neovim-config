@@ -26,6 +26,8 @@ vim.opt.swapfile = false
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 
+-- vim.opt.shell = "C:\\Users\\rohit\\AppData\\Local\\Programs\\nu\\bin\\nu.exe"
+
 vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
 vim.opt.signcolumn = "yes"

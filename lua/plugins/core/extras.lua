@@ -60,7 +60,7 @@ return {
 				PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
 				NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
 				TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
-				DESC = { icon = " ", color = "desc" },
+				DESC = { icon = "󰉸", color = "desc" },
 			},
 			colors = {
 				desc = { "#f9e2af" },
@@ -106,8 +106,7 @@ return {
 		event = "VeryLazy",
 		opts = {
 			persist_size = true,
-			-- shell = "C:\\Users\\rohit\\AppData\\Local\\Programs\\nu\\bin\\nu.exe",
-			shell = vim.o.shell,
+			shell = "C:\\Users\\rohit\\AppData\\Local\\Programs\\nu\\bin\\nu.exe",
 			vim.api.nvim_set_keymap(
 				"t",
 				"<Esc>",

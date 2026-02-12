@@ -80,7 +80,7 @@ return {
 				},
 			},
 			explorer = { enabled = true },
-			indent = { enabled = true },
+			-- indent = { enabled = true },
 			input = { enabled = true },
 			notifier = {
 				enabled = true,
@@ -316,7 +316,7 @@ return {
 
 	{
 		"echasnovski/mini.nvim",
-		event = "BufReadPre",
+		event = { "BufReadPre", "BufEnter" },
 		version = false, -- use latest dev version
 		config = function()
 			require("mini.pairs").setup({})
@@ -369,6 +369,7 @@ return {
 			require("mini.comment").setup({})
 			require("mini.diff").setup({})
 			require("mini.align").setup({})
+			require("mini.sessions").setup({})
 		end,
 	},
 

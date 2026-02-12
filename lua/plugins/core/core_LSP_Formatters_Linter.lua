@@ -19,7 +19,7 @@ vim.lsp.enable({
 	"basedpyright",
 
 	--- Web / JS / TS
-	"ts_ls",
+	-- "ts_ls",
 	"emmet-ls",
 	"cssls",
 	"tailwindcss",
@@ -27,8 +27,8 @@ vim.lsp.enable({
 	--- C / C++
 	"clangd",
 
-	--- Nushell
-	--- "Nushell",
+	--- Spell CHecker
+	"harper-ls",
 })
 
 vim.diagnostic.config({
@@ -53,13 +53,14 @@ return {
 				javascriptreact = { "biome" },
 				typescript = { "biome" },
 				typescriptreact = { "biome" },
-				json = { "biome" },
-				css = { "biome" },
+				json = { "prettierd" },
+				css = { "prettierd" },
 				scss = { "biome" },
 				html = { "biome" },
 				yaml = { "biome" },
 
 				markdown = { "prettierd" },
+				assembly = { "asmfmt" },
 
 				-- c = { "clang-format" },
 			},

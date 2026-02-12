@@ -42,5 +42,8 @@ set(
 	{ desc = "Go To defination in vertical split" }
 )
 
+--- DESC: Sessions controls
+set("n", "<leader>ss", "<cmd>mksession<cr>", { desc = "Save Session" })
+
 --- DESC: MISC Binds
 set("n", "<leader>r", toggle.Run_code, { desc = "Run Code" })

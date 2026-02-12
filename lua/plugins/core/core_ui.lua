@@ -13,6 +13,7 @@ return {
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		enabled = false,
 		event = "BufReadPre",
 		config = function()
 			local highlight = {
@@ -36,6 +37,20 @@ return {
 			end)
 
 			require("ibl").setup({ indent = { highlight = highlight } })
+		end,
+	},
+
+	{
+		"shellRaining/hlchunk.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("hlchunk").setup({
+				chunk = {
+					enable = true,
+					duration = 200,
+					delay = 100,
+				},
+			})
 		end,
 	},
 
