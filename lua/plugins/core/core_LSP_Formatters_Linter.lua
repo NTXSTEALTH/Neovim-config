@@ -1,4 +1,4 @@
---- NOTE: This File houses all the LSP and Formatter Plugins and their configurations.
+--- NOTE: This File houses all the LSP and Formatter Plugins and their configurations.for
 
 --- Conform          : Formatter
 --- Mason            : LSP Manager
@@ -19,7 +19,8 @@ vim.lsp.enable({
 	"basedpyright",
 
 	--- Web / JS / TS
-	-- "ts_ls",
+	"ts_ls",
+	-- "vtsls",
 	"emmet-ls",
 	"cssls",
 	"tailwindcss",

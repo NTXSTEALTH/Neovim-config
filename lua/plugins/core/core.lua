@@ -12,10 +12,13 @@ return {
 		build = ":TSUpdate",
 		lazy = false,
 		config = function()
+			vim.env.CC = "gcc"
+			require("nvim-treesitter.install").compilers = { "gcc" }
 			local ts = require("nvim-treesitter")
 
 			ts.setup({
 				ensure_installed = {
+					"query",
 					"lua",
 					"vim",
 					"vimdoc",

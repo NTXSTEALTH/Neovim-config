@@ -45,3 +45,7 @@ vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 0
 
 vim.opt.updatetime = 300
+
+-- Standardize the path for Windows
+local mason_bin = vim.fn.stdpath("data") .. "/mason/bin"
+vim.env.PATH = mason_bin .. ";" .. vim.env.PATH
