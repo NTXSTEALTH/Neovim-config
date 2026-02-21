@@ -26,7 +26,14 @@ vim.opt.swapfile = false
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 
--- vim.opt.shell = "C:\\Users\\rohit\\AppData\\Local\\Programs\\nu\\bin\\nu.exe"
+local shell_path = "C:\\Users\\rohit\\AppData\\Local\\Programs\\nu\\bin\\nu.exe"
+
+vim.o.shell = shell_path
+vim.o.shellcmdflag = "-c"
+vim.o.shellquote = ""
+vim.o.shellxquote = ""
+vim.o.shellredir = "out+err> %s"
+vim.o.shellpipe = "| tee %s"
 
 vim.opt.cursorline = true
 -- vim.opt.cursorcolumn = true
