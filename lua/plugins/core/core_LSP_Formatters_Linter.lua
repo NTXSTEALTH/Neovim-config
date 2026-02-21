@@ -58,13 +58,15 @@ return {
 				css = { "prettierd" },
 				scss = { "biome" },
 				html = { "biome" },
-				yaml = { "biome" },
+				yaml = { "prettierd" },
+				toml = { "prettierd" },
 
 				markdown = { "prettierd" },
 				assembly = { "asmfmt" },
 
-				-- c = { "clang-format" },
+				c = { "clang-format" },
 			},
+
 			format_on_save = {
 				timeout_ms = 500,
 				lsp_fallback = true,
