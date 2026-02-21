@@ -33,6 +33,9 @@ vim.g.trouble = true
 --- A plugin to render markdown files in nvim.
 vim.g.render_markdown = true
 
+--- A plugin to fold blocks of code.
+vim.g.fold = true
+
 return {
 	{
 		"folke/ts-comments.nvim",
@@ -300,5 +303,28 @@ return {
 		---@module 'render-markdown'
 		---@type render.md.UserConfig
 		opts = {},
+	},
+
+	{
+		"kevinhwang91/nvim-ufo",
+		dependencies = "kevinhwang91/promise-async",
+		config = function()
+			-- UFO needs specific capabilities to work with LSP
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.foldingRange = {
+				dynamicRegistration = false,
+				lineFoldingOnly = true,
+			}
+
+			-- Apply capabilities to your LSPs (example for pyright/ts_ls)
+			local language_servers = require("lspconfig").util.available_servers()
+			for _, ls in ipairs(language_servers) do
+				require("lspconfig")[ls].setup({
+					capabilities = capabilities,
+				})
+			end
+
+			require("ufo").setup()
+		end,
 	},
 }

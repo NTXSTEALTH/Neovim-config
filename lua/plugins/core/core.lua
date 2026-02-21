@@ -1,6 +1,7 @@
 --- NOTE: This config file contains all the core plugins for the editor
 
 --- Treesitter : Syntax Highlighting.
+--- Telescope  : Fuzzy finder.
 --- Snacks     : collection of utility functions.
 --- Mini       : collection of QOL motions and utilities.
 --- Flash      : A fast positiing plugin.

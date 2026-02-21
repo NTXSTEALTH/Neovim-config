@@ -14,7 +14,12 @@ set("n", "<leader>bv", "<cmd>vs<cr>", { desc = "Vertical Split" })
 set("n", "<leader>bh", "<cmd>sp<cr>", { desc = "Horizontal Split" })
 
 ---  DESC: GUI / UI Binds
-set("n", "<leader><leader>", "<CMD>Telescope find_files<CR>", { desc = "Find Files" })
+set(
+	"n",
+	"<leader><leader>",
+	"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+	{ desc = "Find Files" }
+)
 set("n", "<leader>uB", toggle.toggle_transparency, { desc = "Toggle Transparency", noremap = true, silent = true })
 
 set("n", "<leader>L", "<CMD>Lazy<CR>", { desc = "Open Lazy" })

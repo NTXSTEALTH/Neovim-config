@@ -53,6 +53,10 @@ vim.opt.ttimeoutlen = 0
 
 vim.opt.updatetime = 300
 
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
 -- Standardize the path for Windows
 local mason_bin = vim.fn.stdpath("data") .. "/mason/bin"
 vim.env.PATH = mason_bin .. ";" .. vim.env.PATH
