@@ -20,8 +20,6 @@ State_manager = require("utils.state")
 States = State_manager.read()
 
 --- DESC: State inilization.
-
---- Assigning the transparency.
 vim.g.bg_transparent = toboolean(States.bg_transparent)
 
 --- DESC: Basic Autocommands

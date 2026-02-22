@@ -151,9 +151,7 @@ return {
 			"rebelot/kanagawa.nvim",
 			"ellisonleao/gruvbox.nvim",
 			"rktjmp/lush.nvim",
-			"nyoom-engineering/nyoom.nvim",
 			"olimorris/onedarkpro.nvim",
-			"rose-pine/neovim",
 			async = true,
 			activity = true,
 		},
@@ -165,7 +163,7 @@ return {
 			preset = "helix",
 
 			win = {
-				border = false,
+				border = true,
 				padding = { 1, 3 },
 			},
 			plugins = {
@@ -201,6 +199,8 @@ return {
 				{ "m", group = "Mini", icon = "󰘨" }, -- NOTE: Mini Options
 				{ "<leader>w", icon = "" }, --NOTE: Save File
 				{ "<leader>b", group = "Buffer", icon = "" }, --NOTE: Buffer options
+				{ "<leader>bh", icon = "" }, --NOTE: Buffer options
+				{ "<leader>bv", icon = "┃" }, --NOTE: Buffer options
 
 				{
 					"<leader>ljs",
