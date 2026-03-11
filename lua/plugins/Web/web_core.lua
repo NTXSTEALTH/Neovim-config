@@ -50,7 +50,7 @@ return {
 	},
 	{
 		"barrett-ruth/live-server.nvim",
-		ft = { "javascriptreact", "typescriptreact", "typescript", "javascript" },
+		ft = { "javascriptreact", "typescriptreact", "typescript", "javascript", "html" },
 		build = "pnpm add -g live-server",
 		cmd = { "LiveServerStart", "LiveServerStop" },
 		config = true,
