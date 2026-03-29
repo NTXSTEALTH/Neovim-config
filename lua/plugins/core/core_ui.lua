@@ -56,7 +56,7 @@ return {
 
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "BufEnter",
+		event = "VeryLazy",
 
 		dependencies = {
 			{

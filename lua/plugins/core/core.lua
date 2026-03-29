@@ -91,7 +91,7 @@ return {
 				enabled = true,
 				timeout = 2000,
 			},
-			picker = { enabled = true, hidden = true },
+			picker = { enabled = false, hidden = true },
 			quickfile = { enabled = true },
 			scope = { enabled = true },
 			scroll = { enabled = true },
@@ -204,11 +204,32 @@ return {
 				desc = "Undo History",
 			},
 			{
-				"gI",
+				"<leader>gi",
 				function()
-					Snacks.picker.lsp_implementations()
+					Snacks.picker.gh_issue()
 				end,
-				desc = "Goto Implementation",
+				desc = "GitHub Issues (open)",
+			},
+			{
+				"<leader>gI",
+				function()
+					Snacks.picker.gh_issue({ state = "all" })
+				end,
+				desc = "GitHub Issues (all)",
+			},
+			{
+				"<leader>gp",
+				function()
+					Snacks.picker.gh_pr()
+				end,
+				desc = "GitHub Pull Requests (open)",
+			},
+			{
+				"<leader>gP",
+				function()
+					Snacks.picker.gh_pr({ state = "all" })
+				end,
+				desc = "GitHub Pull Requests (all)",
 			},
 			{
 				"gy",
