@@ -84,7 +84,7 @@ return {
 ]],
 				},
 			},
-			explorer = { enabled = true },
+			explorer = { enabled = false },
 			indent = { enabled = true },
 			input = { enabled = true },
 			notifier = {
@@ -111,13 +111,13 @@ return {
 				end,
 				desc = "Notification History",
 			},
-			{
-				"<leader>e",
-				function()
-					Snacks.explorer()
-				end,
-				desc = "File Explorer",
-			},
+			-- {
+			-- 	"<leader>e",
+			-- 	function()
+			-- 		Snacks.explorer()
+			-- 	end,
+			-- 	desc = "File Explorer",
+			-- },
 			{
 				"<leader>sb",
 				function()
@@ -429,15 +429,22 @@ return {
 
 	{ "serhez/bento.nvim", event = "BufReadPre", opts = {} },
 
-	-- {
-	-- 	"stevearc/oil.nvim",
-	-- 	---@module 'oil'
-	-- 	---@type oil.SetupOpts
-	-- 	opts = {},
-	-- 	-- Optional dependencies
-	-- 	dependencies = { { "nvim-mini/mini.icons", opts = {} } },
-	-- 	-- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-	-- 	-- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
-	-- 	lazy = false,
-	-- },
+	{
+		"stevearc/oil.nvim",
+		---@module 'oil'
+		---@type oil.SetupOpts
+		opts = {
+			default_file_explorer = false,
+			float = {
+				border = "rounded",
+			},
+
+			view_options = {
+				show_hidden = true,
+			},
+			delete_to_trash = true,
+		},
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		lazy = false,
+	},
 }

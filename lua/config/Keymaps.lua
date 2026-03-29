@@ -10,10 +10,19 @@ set("i", "<A-j>", "<Esc>", { noremap = true, silent = true })
 set("n", "<leader>w", "<cmd>:w<cr>", { desc = "Save" })
 set("n", "<leader>q", "<cmd>:q!<cr>", { desc = "Quit" })
 
+set("n", "<C-w>", "<cmd>:w<cr>", { desc = "Save" })
+set("n", "<C-q>", "<cmd>:q!<cr>", { desc = "Quit" })
+
 set("n", "<leader>bv", "<cmd>vs<cr>", { desc = "Vertical Split" })
 set("n", "<leader>bh", "<cmd>sp<cr>", { desc = "Horizontal Split" })
 
 ---  DESC: GUI / UI Binds
+
+-- Lua keymap example
+set("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<CR>", { desc = "Open Oil in float" })
+
+-- set({ "<leader>e", function() require("oil").toggle_float() end, desc = "Toggle Oil Float" })
+
 set(
 	"n",
 	"<leader><leader>",
