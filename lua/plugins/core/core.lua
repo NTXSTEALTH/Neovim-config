@@ -455,7 +455,7 @@ return {
 		---@module 'oil'
 		---@type oil.SetupOpts
 		opts = {
-			default_file_explorer = false,
+			default_file_explorer = true,
 			float = {
 				border = "rounded",
 			},

@@ -16,7 +16,8 @@ vim.lsp.enable({
 	"lua_ls",
 
 	--- Python
-	"basedpyright",
+	-- "basedpyright",
+	"ty",
 
 	--- Web / JS / TS
 	"ts_ls",

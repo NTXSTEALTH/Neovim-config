@@ -13,12 +13,14 @@ set("n", "<leader>q", "<cmd>:q!<cr>", { desc = "Quit" })
 set("n", "<C-w>", "<cmd>:w<cr>", { desc = "Save" })
 set("n", "<C-q>", "<cmd>:q!<cr>", { desc = "Quit" })
 
-set("n", "<leader>bv", "<cmd>vs<cr>", { desc = "Vertical Split" })
-set("n", "<leader>bh", "<cmd>sp<cr>", { desc = "Horizontal Split" })
+set("n", "<leader>bv", "<cmd>sp<cr>", { desc = "Vertical Split" })
+set("n", "<leader>bh", "<cmd>vs<cr>", { desc = "Horizontal Split" })
+
+set("n", "<A-l>", "<CMD>SplitJumpRight<CR>", { desc = "Move cursor to right" })
+set("n", "<A-h>", "<CMD>SplitJumpLeft<CR>", { desc = "Move cursor to left" })
 
 ---  DESC: GUI / UI Binds
 
--- Lua keymap example
 set("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<CR>", { desc = "Open Oil in float" })
 
 -- set({ "<leader>e", function() require("oil").toggle_float() end, desc = "Toggle Oil Float" })
@@ -34,7 +36,6 @@ set("n", "<leader>uB", toggle.toggle_transparency, { desc = "Toggle Transparency
 set("n", "<leader>L", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 set("n", "<leader>ut", "<CMD>:Themify<CR>", { desc = "Open Themify GUI" })
 set("n", "<leader>um", "<CMD>:Mason<CR>", { desc = "Open Mason" })
-
 set("n", "<leader>bd", "<CMD>bdelete<CR>", { desc = "Delete Buffer" })
 
 ---  DESC: Toggles
