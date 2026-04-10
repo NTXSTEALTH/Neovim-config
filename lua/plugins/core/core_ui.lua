@@ -8,6 +8,7 @@
 --- Transparent      : Transparent background.
 --- Cinnamon         : Smooth scrolling.
 --- Noice            : Better UI.
+--- split-jump       : Jump between split panes.
 
 return {
 
@@ -332,5 +333,10 @@ return {
 		dependencies = {
 			{ "MunifTanjim/nui.nvim", event = "VeryLazy" },
 		},
+	},
+
+	{
+		"anoopkcn/split-jump.nvim",
+		opts = { mappings = false },
 	},
 }
