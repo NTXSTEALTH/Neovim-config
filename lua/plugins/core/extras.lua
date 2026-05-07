@@ -87,11 +87,12 @@ return {
 					python = "uv run $fileName",
 					javascript = "node $fileName",
 					typescript = "deno run --allow-env --allow-sys --allow-read --allow-net $fileName",
-					c = {
-						"cd $dir ;",
-						"gcc $fileName -o $fileNameWithoutExt.exe ;",
-						"./$fileNameWithoutExt.exe",
-					},
+					-- c = {
+					-- 	"cd $dir ;",
+					-- 	"gcc $fileName -o $fileNameWithoutExt.exe ;",
+					-- 	"./$fileName",
+					-- },
+					c = "powershell -Command \"Set-Location '$dir'; make run\"",
 					cpp = {
 						"cd $dir ;",
 						"g++ $fileName -o $fileNameWithoutExt.exe ;",
@@ -307,7 +308,8 @@ return {
 
 	{
 		"kevinhwang91/nvim-ufo",
-		dependencies = "kevinhwang91/promise-async",
+		dependencies = { "kevinhwang91/promise-async", event = "BufEnter" },
+		event = "BufEnter",
 		config = function()
 			-- UFO needs specific capabilities to work with LSP
 			local capabilities = vim.lsp.protocol.make_client_capabilities()

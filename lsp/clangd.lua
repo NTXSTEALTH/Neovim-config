@@ -7,6 +7,7 @@ return {
 		".clang-tidy",
 		".clang-format",
 		"compile_commands.json",
+		"--query-driver=C:/Program Files/LLVM/bin/clang*",
 		"compile_flags.txt",
 		"configure.ac", -- AutoTools
 		".git",
