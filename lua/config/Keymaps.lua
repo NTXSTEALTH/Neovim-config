@@ -43,7 +43,7 @@ set("n", "<leader>t", "<CMD>ToggleTerm direction=float size=60 name=floating<CR>
 set("n", "<leader>ljs", toggle.toggle_live_server, { desc = "Toggle live server" })
 set("n", "<leader>sea", toggle.toggle_codeium, { desc = "Toggle Codeium" })
 
----  DESC: LSP
+---  DESC: LSP / Snippets
 set("n", "gl", vim.diagnostic.open_float, { desc = "Open Diagnostics Float" })
 set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
 set("n", "gs", vim.lsp.buf.signature_help, { desc = "Signature Documentation" })
@@ -56,6 +56,19 @@ set(
 	"<cmd>vsplit | lua vim.lsp.buf.defination()<cr>",
 	{ desc = "Go To defination in vertical split" }
 )
+
+---  DESC: Snippets keybinds
+local ls = require("luasnip")
+set({ "i", "s" }, "<A-n>", function()
+	if ls.expand_or_jumpable() then
+		ls.expand_or_jump()
+	end
+end, { silent = true, desc = "Expand Snippet" })
+set({ "i", "s" }, "<A-p>", function()
+	if ls.jumpable(-1) then
+		ls.jump(-1)
+	end
+end, { silent = true, desc = "Jump to previous snippet" })
 
 --- DESC: Sessions controls
 set("n", "<leader>ss", "<cmd>mksession<cr>", { desc = "Save Session" })
