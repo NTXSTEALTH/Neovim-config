@@ -9,11 +9,17 @@
 vim.g.colorful_menu = true
 vim.lsp.inlay_hint.enable(true)
 
+local llvm_base =
+	"C:/Users/rohit/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe"
+
+local llvm_dir = vim.fn.glob(llvm_base .. "/llvm-mingw-*-ucrt-x86_64")
+local clang_version = vim.fn.glob(llvm_dir .. "/lib/clang/*")
+
 vim.lsp.config("clangd", {
 	cmd = {
 		"clangd",
-		"--resource-dir=C:/Users/rohit/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260421-ucrt-x86_64/lib/clang/22",
-		"--query-driver=C:/Users/rohit/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260421-ucrt-x86_64/bin/clang*",
+		"--resource-dir=" .. clang_version,
+		"--query-driver=" .. llvm_dir .. "/bin/clang.exe",
 	},
 })
 
@@ -92,7 +98,7 @@ return {
 				"basedpyright",
 				"ruff",
 
-				"clangd",
+				-- "clangd",
 
 				"ts_ls",
 				"cssls",
