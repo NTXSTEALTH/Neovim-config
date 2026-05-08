@@ -341,11 +341,30 @@ return {
 
 			--- C Snippets.
 			ls.add_snippets("c", {
-
+				--- boilerplate Starter code.
 				s("boiler", {
 					t({ "#include <stdio.h>", "int main() {", "" }),
 					i(1),
 					t({ "", "return 0;", "}" }),
+				}),
+
+				s("forl", {
+					t("for ( int i = "),
+					i(1),
+					t("; i "),
+					i(2, "<"),
+					t("; i++ ) {"),
+					i(3),
+					t("}"),
+					i(0),
+				}),
+				s("pri", {
+					t('printf("'),
+					i(1),
+					t('", '),
+					i(2),
+					t(");"),
+					i(0),
 				}),
 			})
 		end,
