@@ -9,6 +9,14 @@
 vim.g.colorful_menu = true
 vim.lsp.inlay_hint.enable(true)
 
+vim.lsp.config("clangd", {
+	cmd = {
+		"clangd",
+		"--resource-dir=C:/Users/rohit/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260421-ucrt-x86_64/lib/clang/22",
+		"--query-driver=C:/Users/rohit/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260421-ucrt-x86_64/bin/clang*",
+	},
+})
+
 --- NOTE: Enabling LSP's
 vim.lsp.enable({
 
@@ -328,6 +336,16 @@ return {
 					i(1, "int"),
 					t("]"),
 					i(0),
+				}),
+			})
+
+			--- C Snippets.
+			ls.add_snippets("c", {
+
+				s("boiler", {
+					t({ "#include <stdio.h>", "int main() {", "" }),
+					i(1),
+					t({ "", "return 0;", "}" }),
 				}),
 			})
 		end,

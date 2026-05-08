@@ -1,15 +1,18 @@
 ---@diagnostic disable: undefined-field, undefined-global
 return {
-	cmd = { "clangd" },
+	cmd = {
+		"clangd",
+		"--resource-dir=C:/Users/rohit/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260421-ucrt-x86_64/lib/clang/22",
+		"--query-driver=C:/Users/rohit/AppData/Local/Microsoft/WinGet/Packages/MartinStorsjo.LLVM-MinGW.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/llvm-mingw-20260421-ucrt-x86_64/bin/clang*",
+	},
 	filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
 	root_markers = {
 		".clangd",
 		".clang-tidy",
 		".clang-format",
 		"compile_commands.json",
-		"--query-driver=C:/Program Files/LLVM/bin/clang*",
 		"compile_flags.txt",
-		"configure.ac", -- AutoTools
+		"configure.ac",
 		".git",
 	},
 	capabilities = {
@@ -30,7 +33,6 @@ return {
 		vim.api.nvim_buf_create_user_command(bufnr, "LspClangdSwitchSourceHeader", function()
 			switch_source_header(bufnr, client)
 		end, { desc = "Switch between source/header" })
-
 		vim.api.nvim_buf_create_user_command(bufnr, "LspClangdShowSymbolInfo", function()
 			symbol_info(bufnr, client)
 		end, { desc = "Show symbol info" })
