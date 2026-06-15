@@ -43,6 +43,9 @@ vim.lsp.enable({
 	--- C / C++
 	"clangd",
 
+	--- Rust
+	"rust_analyzer",
+
 	--- Spell CHecker
 	"harper-ls",
 })
@@ -80,6 +83,8 @@ return {
 				assembly = { "asmfmt" },
 
 				c = { "clang-format" },
+
+				rust = { "rustfmt" },
 			},
 
 			format_on_save = {

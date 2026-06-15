@@ -203,6 +203,8 @@ return {
 				{ "<leader>b", group = "Buffer", icon = "" }, --NOTE: Buffer options
 				{ "<leader>bh", icon = "" }, --NOTE: Buffer options
 				{ "<leader>bv", icon = "┃" }, --NOTE: Buffer options
+				{ "<leader>se", group = "toggles", icon = "󰨚" }, --NOTE: Buffer options
+				{ "<leader>b", group = "Buffer options", icon = "" }, --NOTE: Buffer options
 
 				{
 					"<leader>ljs",

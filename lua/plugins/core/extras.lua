@@ -98,6 +98,8 @@ return {
 						"g++ $fileName -o $fileNameWithoutExt.exe ;",
 						"./$fileNameWithoutExt.exe",
 					},
+					rust = "powershell -Command \"Set-Location '$dir/..'; cargo run -q \"",
+					lua = "lua $fileName",
 				},
 			})
 		end,
