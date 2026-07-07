@@ -3,6 +3,7 @@
 --- |=========|
 
 local set = vim.keymap.set
+local toggle = require("utils.toggles")
 
 ---| Basic binds
 set("i", "<A-j>", "<ESC>", { silent = true, desc = "Esc" })
@@ -32,6 +33,19 @@ set(
 	{ desc = "Go To defination in vertical split" }
 )
 
+---| Snippets keybinds
+local ls = require("luasnip")
+set({ "i", "s" }, "<A-n>", function()
+	if ls.expand_or_jumpable() then
+		ls.expand_or_jump()
+	end
+end, { silent = true, desc = "Expand Snippet" })
+set({ "i", "s" }, "<A-p>", function()
+	if ls.jumpable(-1) then
+		ls.jump(-1)
+	end
+end, { silent = true, desc = "Jump to previous snippet" })
+
 ---| File Exploreres
 set("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<CR>", { desc = "Open Oil in float" })
 set(
@@ -40,3 +54,17 @@ set(
 	"<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
 	{ desc = "Find Files" }
 )
+
+--- Utility Binds
+set("n", "<leader>r", toggle.Run_code, { desc = "Run Code" })
+
+set("n", "<leader>L", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
+set("n", "<leader>ut", "<CMD>:Themify<CR>", { desc = "Open Themify GUI" })
+set("n", "<leader>um", "<CMD>:Mason<CR>", { desc = "Open Mason" })
+set("n", "<leader>bd", "<CMD>bdelete<CR>", { desc = "Delete Buffer" })
+
+---  DESC: Toggles
+set("n", "<leader>t", "<CMD>ToggleTerm direction=float size=60 name=floating<CR>", { desc = "Open Floating Terminal" })
+set("n", "<leader>ljs", toggle.toggle_live_server, { desc = "Toggle live server" })
+set("n", "<leader>sea", toggle.toggle_codeium, { desc = "Toggle Codeium" })
+set("n", "<leader>uB", toggle.toggle_transparency, { desc = "Toggle Transparency", noremap = true, silent = true })

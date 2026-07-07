@@ -15,67 +15,74 @@ vim.diagnostic.config({
 return {
 
 	{
+		"mason-org/mason.nvim",
+		event = "VeryLazy",
+		opts = {},
+	},
+	{
 		"mason-org/mason-lspconfig.nvim",
+		event = "VeryLazy",
 		opts = {},
 		dependencies = {
-			{
-				"mason-org/mason.nvim",
-				opts = {},
-			},
 			"neovim/nvim-lspconfig",
-			{
-				"WhoIsSethDaniel/mason-tool-installer.nvim",
-				opts = {
-					auto_update = true,
-					ensure_installed = {
-						--- Lua
-						"lua_ls",
-						"stylua",
+			event = "VeryLazy",
+		},
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		event = "VeryLazy",
+		opts = {
+			auto_update = true,
+			ensure_installed = {
+				--- Lua
+				"lua_ls",
+				"stylua",
 
-						--- Python
-						"ruff",
-						--- JS / TS
-						"ts_ls",
-						"emmet-ls",
-						"cssls",
-						"tailwindcss",
+				--- Python
+				"ruff",
+				--- JS / TS
+				"ts_ls",
+				"biome",
+				"emmet-ls",
+				"cssls",
+				"tailwindcss",
 
-						--- JSON / CSS / HTML/ YAML / TOML
-						"prettierd",
+				--- CSS / HTML/ YAML / TOML
+				"prettierd",
 
-						--- Rust
-						"rust_analyzer",
+				--- Rust
+				"rust_analyzer",
 
-						--- C
-						"clangd",
-					},
-				},
+				--- C
+				"clangd",
 			},
 		},
 	},
 	{
 
 		"stevearc/conform.nvim",
+		event = "VeryLazy",
 		opts = {
 			format_on_save = {
-				-- These options will be passed to conform.format()
-				timeout_ms = 5000,
+				timeout_ms = 500,
 				lsp_format = "fallback",
 			},
-			lua = { "stylua" },
-			python = { "ruff_format" },
-			javascript = { "prettierd" },
-			javascriptreact = { "prettierd" },
-			typescript = { "prettierd" },
-			typescriptreact = { "prettierd" },
-			html = { "biome" },
-			json = { "prettierd" },
-			css = { "prettierd" },
-			toml = { "prettierd" },
-			yaml = { "prettierd" },
-			markdown = { "prettierd" },
-			c = { "clang-format" },
-			rust = { "rustfmt" },
+			formatters_by_ft = {
+				lua = { "stylua" },
+				python = { "ruff_format" },
+				javascript = { "biome" },
+				javascriptreact = { "biome" },
+				typescript = { "biome" },
+				typescriptreact = { "biome" },
+				html = { "biome" },
+				json = { "biome" },
+				css = { "prettierd" },
+				toml = { "prettierd" },
+				yaml = { "prettierd" },
+				markdown = { "prettierd" },
+				c = { "clang-format" },
+				rust = { "rustfmt" },
+			},
 		},
 	},
 }

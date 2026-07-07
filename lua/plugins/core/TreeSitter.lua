@@ -7,13 +7,22 @@ return {
 		config = function()
 			local treesitter = require("nvim-treesitter")
 			treesitter.setup({
-				highlight = {
-					enable = true,
-				},
-				indent = {
-					enable = true,
-				},
+				auto_install = true,
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = true },
 			})
+			for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+				if vim.api.nvim_buf_is_loaded(buf) then
+					pcall(vim.treesitter.start, buf)
+				end
+			end
+			vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile", "FileType" }, {
+				callback = function(args)
+					pcall(vim.treesitter.start, args.buf)
+				end,
+			})
+
 			local ensure_installed = {
 				"vim",
 				"vimdoc",

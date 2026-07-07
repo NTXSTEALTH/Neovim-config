@@ -1,7 +1,8 @@
 return {
 	{
 		"saghen/blink.cmp",
-		dependencies = { "rafamadriz/friendly-snippets", { "L3MON4D3/LuaSnip", version = "v2.*" } },
+		event = "VeryLazy",
+		dependencies = { { "rafamadriz/friendly-snippets", event = "VeryLazy" } },
 
 		version = "1.*",
 

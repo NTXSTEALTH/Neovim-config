@@ -287,4 +287,37 @@ return {
 			end,
 		},
 	},
+	{
+		"CRAG666/code_runner.nvim",
+		enabled = vim.g.code_runner,
+		event = "BufReadPre",
+		cmd = "RunCode",
+		config = function()
+			require("code_runner").setup({
+				mode = "toggleterm",
+				term = {
+					position = "float",
+					size = 10,
+				},
+				filetype = {
+					python = "uv run $fileName",
+					javascript = "node $fileName",
+					typescript = "deno run --allow-env --allow-sys --allow-read --allow-net $fileName",
+					-- c = {
+					-- 	"cd $dir ;",
+					-- 	"gcc $fileName -o $fileNameWithoutExt.exe ;",
+					-- 	"./$fileName",
+					-- },
+					c = "powershell -Command \"Set-Location '$dir'; make run\"",
+					cpp = {
+						"cd $dir ;",
+						"g++ $fileName -o $fileNameWithoutExt.exe ;",
+						"./$fileNameWithoutExt.exe",
+					},
+					rust = "powershell -Command \"Set-Location '$dir/..'; cargo run -q \"",
+					lua = "lua $fileName",
+				},
+			})
+		end,
+	},
 }
