@@ -4,7 +4,7 @@
 --- Mason            : LSP Manager
 --- Blink            : CMP
 --- Colorful_menu    : CMP customization.
---- Nvin_lint        :Linting.
+--- Nvin_lint        : Linting.
 
 vim.g.colorful_menu = true
 vim.lsp.inlay_hint.enable(true)
@@ -226,7 +226,7 @@ return {
 		config = function()
 			local lint = require("lint")
 
-			-- 🔧 Map filetypes to linters
+			--  Map filetypes to linters
 			lint.linters_by_ft = {
 				javascript = { "eslint_d" },
 				typescript = { "eslint_d" },
