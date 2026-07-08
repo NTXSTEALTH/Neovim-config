@@ -29,6 +29,7 @@ require("lazy").setup({
 		{ import = "plugins.UI" },
 		{ import = "plugins.editor" },
 		{ import = "plugins.lang" },
+		{ import = "plugins.AI" },
 		{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	},
 	-- Configure any other settings here. See the documentation for more details.

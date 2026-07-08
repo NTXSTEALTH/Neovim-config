@@ -1,6 +1,5 @@
 return {
 	"monkoose/neocodeium",
-	enabled = vim.g.neo_codeium,
 	event = "BufReadPre",
 	config = function()
 		local neocodeium = require("neocodeium")
