@@ -67,6 +67,13 @@ return {
 				timeout_ms = 500,
 				lsp_format = "fallback",
 			},
+
+			formatters = {
+				my_formatter = {
+					command = "nufmt",
+					args = { "$FILENAME" },
+				},
+			},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ruff_format" },
@@ -82,6 +89,7 @@ return {
 				markdown = { "prettierd" },
 				c = { "clang-format" },
 				rust = { "rustfmt" },
+				nu = { "nufmt" },
 			},
 		},
 	},
