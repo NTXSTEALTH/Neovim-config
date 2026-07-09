@@ -40,3 +40,5 @@ vim.o.autowrite = false
 vim.o.hidden = true
 vim.o.backspace = "indent,eol,start"
 vim.o.encoding = "UTF-8"
+
+vim.o.showcmd = true

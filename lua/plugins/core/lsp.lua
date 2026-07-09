@@ -30,7 +30,7 @@ return {
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		-- event = "VeryLazy",
+		event = "VeryLazy",
 		opts = {
 			auto_update = true,
 			ensure_installed = {
@@ -82,7 +82,7 @@ return {
 				typescript = { "biome" },
 				typescriptreact = { "biome" },
 				html = { "biome" },
-				json = { "biome" },
+				json = { "prettierd" },
 				css = { "prettierd" },
 				toml = { "prettierd" },
 				yaml = { "prettierd" },

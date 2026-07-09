@@ -1,4 +1,4 @@
-require("utils.state")
+require("config.startup")
 require("config.lazy")
 require("config.options")
 require("config.keymaps")

@@ -3,7 +3,7 @@
 --- |=========|
 
 local set = vim.keymap.set
-local toggle = require("utils.toggles")
+local toggle = require("config.utils.Toggles")
 
 ---| Basic binds
 set("i", "<A-j>", "<ESC>", { silent = true, desc = "Esc" })
@@ -56,7 +56,6 @@ set(
 )
 
 --- Utility Binds
-set("n", "<leader>r", toggle.Run_code, { desc = "Run Code" })
 
 set("n", "<leader>L", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 set("n", "<leader>ut", "<CMD>:Themify<CR>", { desc = "Open Themify GUI" })
@@ -64,6 +63,7 @@ set("n", "<leader>um", "<CMD>:Mason<CR>", { desc = "Open Mason" })
 set("n", "<leader>bd", "<CMD>bdelete<CR>", { desc = "Delete Buffer" })
 
 ---  DESC: Toggles
+set("n", "<leader>r", toggle.Run_code, { desc = "Run Code" })
 set("n", "<leader>t", "<CMD>ToggleTerm direction=float size=60 name=floating<CR>", { desc = "Open Floating Terminal" })
 set("n", "<leader>ljs", toggle.toggle_live_server, { desc = "Toggle live server" })
 set("n", "<leader>sea", toggle.toggle_codeium, { desc = "Toggle Codeium" })

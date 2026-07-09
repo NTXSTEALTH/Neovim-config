@@ -1,7 +1,6 @@
 --- |=== Plugins ===|
 --- Lua line
 --- Noice
---- Which Key
 --- Smear cursor
 --- hlchunk
 --- cinnamon

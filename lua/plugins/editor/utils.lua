@@ -1,3 +1,4 @@
+--- Which Key
 return {
 	{
 
@@ -61,8 +62,8 @@ return {
 				{
 					"<leader>uB",
 					icon = function()
-						if vim.g.bg_transparent then
-							return "󰔡"
+						if vim.g.transparency then
+							return ""
 						else
 							return ""
 						end
