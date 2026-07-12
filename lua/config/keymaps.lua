@@ -56,6 +56,11 @@ set(
 	{ desc = "Find Files" }
 )
 
+local dropbar_api = require("dropbar.api")
+set("n", "<Leader>;", dropbar_api.pick, { desc = "Pick symbols in winbar" })
+set("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current context" })
+set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
+
 --- Utility Binds
 
 set("n", "<leader>L", "<CMD>Lazy<CR>", { desc = "Open Lazy" })

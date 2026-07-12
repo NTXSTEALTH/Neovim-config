@@ -1,4 +1,3 @@
-
 # Neovim Plugin Setup
 
 This is my custom **Neovim** config, build uing **Lazy** as my plugins manager as a fast and modern approach.
