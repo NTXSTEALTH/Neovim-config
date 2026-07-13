@@ -52,7 +52,7 @@ return {
 				{
 					"<leader>ljs",
 					icon = function()
-						if vim.g.live_server then
+						if vim.g.toggle_live_server then
 							return ""
 						else
 							return ""

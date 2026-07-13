@@ -1,8 +1,13 @@
+--- |=== Plugins ===|
+--- Blink CMP
+--- Colorful_menu
+--- Luasnip
+--- |===============|
+
 return {
 	{
 		"saghen/blink.cmp",
 		event = "VeryLazy",
-		dependencies = { { "rafamadriz/friendly-snippets", event = "VeryLazy" } },
 
 		version = "1.*",
 
@@ -80,7 +85,11 @@ return {
 		version = "v2.*",
 		build = "make install_jsregexp",
 
+		dependencies = { { "rafamadriz/friendly-snippets" } },
 		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
+			require("luasnip").config.setup({ store_selection_keys = "<Tab>" })
+
 			local ls = require("luasnip")
 			local s = ls.snippet
 			local t = ls.text_node

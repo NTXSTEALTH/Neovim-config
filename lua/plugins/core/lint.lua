@@ -12,11 +12,8 @@ return {
 				javascriptreact = { "eslint_d" },
 				typescriptreact = { "eslint_d" },
 				python = { "ruff" },
-				-- lua = { "luacheck" },
-				-- sh = { "shellcheck" },
 			}
 
-			-- 🚀 Run linting automatically
 			local augroup = vim.api.nvim_create_augroup("Linting", { clear = true })
 
 			vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {

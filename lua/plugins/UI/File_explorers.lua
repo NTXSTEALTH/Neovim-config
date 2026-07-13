@@ -1,3 +1,9 @@
+--- |=== Plugins ===|
+--- OIL nvim
+--- telescope
+--- Dropbar
+--- |===============|
+
 return {
 	{
 		"stevearc/oil.nvim",
@@ -31,6 +37,7 @@ return {
 		-- optional, but required for fuzzy finder support
 		dependencies = {
 			"nvim-telescope/telescope-fzf-native.nvim",
+			event = "VeryLazy",
 			build = "make",
 		},
 	},

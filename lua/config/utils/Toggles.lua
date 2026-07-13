@@ -35,8 +35,8 @@ function M.toggle_codeium()
 end
 
 function M.toggle_live_server()
-	vim.g.live_server = not vim.g.live_server
-	if vim.g.live_server then
+	vim.g.toggle_live_server = not vim.g.toggle_live_server
+	if vim.g.toggle_live_server then
 		vim.cmd("LiveServerStart")
 	else
 		vim.cmd("LiveServerStop")

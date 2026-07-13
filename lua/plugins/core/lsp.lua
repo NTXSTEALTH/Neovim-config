@@ -81,7 +81,7 @@ return {
 				javascriptreact = { "biome" },
 				typescript = { "biome" },
 				typescriptreact = { "biome" },
-				html = { "biome" },
+				html = { "prettierd" },
 				json = { "prettierd" },
 				css = { "prettierd" },
 				toml = { "prettierd" },
