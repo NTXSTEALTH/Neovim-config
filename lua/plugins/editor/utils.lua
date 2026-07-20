@@ -288,6 +288,7 @@ return {
 			end,
 		},
 	},
+
 	{
 		"CRAG666/code_runner.nvim",
 		enabled = vim.g.code_runner,

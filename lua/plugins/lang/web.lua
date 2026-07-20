@@ -18,24 +18,6 @@ return {
 		end,
 	},
 	{
-		"luckasRanarison/tailwind-tools.nvim",
-		dependencies = {
-			-- "neovim/nvim-lspconfig",
-		},
-		ft = { "javascriptreact", "typescriptreact", "typescript", "javascript" },
-		opts = {
-			debounce = 150,
-			include_languages = {
-				html = "html",
-				javascript = "javascript",
-				typescript = "typescript",
-			},
-			experimental = {
-				classRegex = { 'class="([^"]*)"', 'className="([^"]*)"' },
-			},
-		},
-	},
-	{
 		"roobert/tailwindcss-colorizer-cmp.nvim",
 		ft = { "javascriptreact", "typescriptreact", "typescript", "javascript" },
 		config = function()

@@ -74,3 +74,6 @@ set("n", "<leader>t", "<CMD>ToggleTerm direction=float size=60 name=floating<CR>
 set("n", "<leader>ljs", toggle.toggle_live_server, { desc = "Toggle live server" })
 set("n", "<leader>sea", toggle.toggle_codeium, { desc = "Toggle Codeium" })
 set("n", "<leader>uB", toggle.toggle_transparency, { desc = "Toggle Transparency", noremap = true, silent = true })
+set("n", "<leader>e", "<CMD>Yazi<CR>", { desc = "Open yazi in current file dir" })
+set("n", "<leader>E", "<CMD>Yazi cwd<CR>", { desc = "Open yazi in current dir" })
+set("n", "<leader>up", "<CMD>Yazi toggle<CR>", { desc = "Resume yazi" })
