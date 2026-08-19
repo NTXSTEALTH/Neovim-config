@@ -31,24 +31,23 @@ return {
 		require("mini.ai").setup({
 			n_lines = 500,
 		})
-
-		require("mini.move").setup({
-			mappings = {
-				left = "<C-h>",
-				right = "<C-l>",
-				down = "<C-j>",
-				up = "<C-k>",
-
-				line_left = "<C-h>",
-				line_right = "<C-l>",
-				line_down = "<C-j>",
-				line_up = "<C-k>",
-			},
-
-			options = {
-				reindent_linewise = true,
-			},
-		})
+		-- require("mini.move").setup({
+		-- 	mappings = {
+		-- 		left = "<R-A-h",
+		-- 		right = "<leader>l",
+		-- 		down = "<R-A-k",
+		-- 		up = "<leader>k",
+		--
+		-- 		line_left = "<R-A-h>",
+		-- 		line_right = "<leader>l",
+		-- 		line_down = "<leader>j",
+		-- 		line_up = "<leader>k",
+		-- 	},
+		--
+		-- 	options = {
+		-- 		reindent_linewise = true,
+		-- 	},
+		-- })
 
 		require("mini.comment").setup({})
 		require("mini.diff").setup({})

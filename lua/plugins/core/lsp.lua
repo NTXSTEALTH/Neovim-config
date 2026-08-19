@@ -84,7 +84,7 @@ return {
 				html = { "prettierd" },
 				json = { "prettierd" },
 				css = { "prettierd" },
-				toml = { "prettierd" },
+				toml = { "taplo" },
 				yaml = { "prettierd" },
 				markdown = { "prettierd" },
 				c = { "clang-format" },

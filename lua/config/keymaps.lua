@@ -48,7 +48,10 @@ set({ "i", "s" }, "<A-p>", function()
 end, { silent = true, desc = "Jump to previous snippet" })
 
 ---| File Exploreres
-set("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<CR>", { desc = "Open Oil in float" })
+-- set("n", "<leader>e", "<cmd>lua require('oil').toggle_float()<CR>", { desc = "Open Oil in float" })
+set("n", "<leader>e", "<CMD>Yazi<CR>", { desc = "Open yazi in current file dir" })
+set("n", "<leader>E", "<CMD>Yazi cwd<CR>", { desc = "Open yazi in current dir" })
+set("n", "<leader>up", "<CMD>Yazi toggle<CR>", { desc = "Resume yazi" })
 set(
 	"n",
 	"<leader><leader>",
@@ -62,11 +65,12 @@ set("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current 
 set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
 
 --- Utility Binds
-
 set("n", "<leader>L", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
 set("n", "<leader>ut", "<CMD>:Themify<CR>", { desc = "Open Themify GUI" })
 set("n", "<leader>um", "<CMD>:Mason<CR>", { desc = "Open Mason" })
 set("n", "<leader>bd", "<CMD>bdelete<CR>", { desc = "Delete Buffer" })
+set("n", "<leader>bv", "<CMD>:vsplit<CR>", { desc = "vertical split" })
+set("n", "<leader>bh", "<CMD>:split<CR>", { desc = "Horizontal split" })
 
 ---  DESC: Toggles
 set("n", "<leader>r", toggle.Run_code, { desc = "Run Code" })
@@ -74,6 +78,3 @@ set("n", "<leader>t", "<CMD>ToggleTerm direction=float size=60 name=floating<CR>
 set("n", "<leader>ljs", toggle.toggle_live_server, { desc = "Toggle live server" })
 set("n", "<leader>sea", toggle.toggle_codeium, { desc = "Toggle Codeium" })
 set("n", "<leader>uB", toggle.toggle_transparency, { desc = "Toggle Transparency", noremap = true, silent = true })
-set("n", "<leader>e", "<CMD>Yazi<CR>", { desc = "Open yazi in current file dir" })
-set("n", "<leader>E", "<CMD>Yazi cwd<CR>", { desc = "Open yazi in current dir" })
-set("n", "<leader>up", "<CMD>Yazi toggle<CR>", { desc = "Resume yazi" })

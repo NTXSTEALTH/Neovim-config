@@ -35,8 +35,8 @@ return {
 			wk.setup(opts)
 			wk.add({
 				{ "<leader>l", icon = "󰒲" }, -- NOTE: Lazy GUI
-				{ "<leader>x", group = "Diagnostics", icon = "" }, -- NOTE: trouble GUI
-				{ "<leader>e", icon = "" }, -- NOTE: Neo Tree GUI
+				{ "<leader>e", icon = "" }, -- NOTE: File Explorer
+				{ "<leader>E", icon = "" }, -- NOTE: File Explorer
 				{ "<leader><leader>", icon = "" }, -- NOTE: Find File GUI
 				{ "<leader>s", group = "Utils", icon = "󰙠" }, --NOTE: Utils GUI
 				{ "<leader>u", group = "UI" }, -- NOTE: UI Options GUI
@@ -86,11 +86,6 @@ return {
 				-- { "<leader>gS", icon = "" }, -- NOTE: Git Stash GUI
 
 				{ "<leader>t", icon = "" }, -- NOTE: Terminal Options
-
-				{ "<leader>a", group = "AI", icon = "" }, -- NOTE: AI Options
-
-				{ "<leader>m", group = "Mini / Bookmark", icon = "" }, -- NOTE: Mini / Bookmarks
-				{ "<leader>mc", icon = "󰃢" }, -- NOTE : Clean all bookmarks
 			})
 		end,
 	},
@@ -288,10 +283,9 @@ return {
 			end,
 		},
 	},
-
 	{
 		"CRAG666/code_runner.nvim",
-		enabled = vim.g.code_runner,
+		-- enabled = false,
 		event = "BufReadPre",
 		cmd = "RunCode",
 		config = function()
@@ -310,7 +304,12 @@ return {
 					-- 	"gcc $fileName -o $fileNameWithoutExt.exe ;",
 					-- 	"./$fileName",
 					-- },
-					c = "powershell -Command \"Set-Location '$dir'; make run\"",
+					-- c = "powershell -Command \"Set-Location '$dir'; make run\"",
+					c = {
+						"powershell -Command \"Set-Location '$dir'; make run\"",
+						"gcc $fileName -o $fileNameWithoutExt.exe ;",
+						"./$fileNameWithoutExt.exe",
+					},
 					cpp = {
 						"cd $dir ;",
 						"g++ $fileName -o $fileNameWithoutExt.exe ;",
