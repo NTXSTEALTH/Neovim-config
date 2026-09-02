@@ -5,7 +5,7 @@ return {
 	event = "VeryLazy",
 	opts = {
 		persist_size = true,
-		shell = "C:\\Users\\rohit\\AppData\\Local\\Programs\\nu\\bin\\nu.exe",
+		shell = "nu",
 		vim.api.nvim_set_keymap(
 			"t",
 			"<Esc>",

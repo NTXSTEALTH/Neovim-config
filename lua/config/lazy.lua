@@ -28,7 +28,6 @@ require("lazy").setup({
 		{ import = "plugins.lang" },
 		{ import = "plugins.AI" },
 		{ import = "plugins.exp" },
-		{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
@@ -36,5 +35,3 @@ require("lazy").setup({
 	-- automatically check for plugin updates
 	checker = { enabled = true },
 })
-
-vim.cmd("colorscheme catppuccin")

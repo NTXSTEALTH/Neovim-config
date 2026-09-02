@@ -9,6 +9,21 @@
 
 return {
 	{
+		"lmantw/themify.nvim",
+
+		lazy = false,
+		priority = 999,
+
+		config = {
+			"catppuccin/nvim",
+			"folke/tokyonight.nvim",
+			"sho-87/kanagawa-paper.nvim",
+			"navarasu/onedark.nvim",
+			"marko-cerovac/material.nvim",
+			"olivercederborg/poimandres.nvim",
+		},
+	},
+	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
 		dependencies = {

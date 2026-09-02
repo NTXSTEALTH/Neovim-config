@@ -9,6 +9,7 @@ local toggle = require("config.utils.Toggles")
 set("i", "<A-j>", "<ESC>", { silent = true, desc = "Esc" })
 set("n", "<leader>w", "<CMD>:w<CR>", { silent = true, desc = "Write" })
 set("n", "<leader>q", "<CMD>:q<CR>", { silent = true, desc = "Quit" })
+set("n", "<leader>W", "<CMD>:wq<CR>", { silent = true, desc = "Write Quit" })
 set("n", "<leader>Q", "<CMD>:q!<CR>", { silent = true, desc = "Force Quit" })
 set("n", "<ESC>", "<CMD>nohlsearch<CR>", { desc = "Clear search highlights" })
 ---
@@ -66,7 +67,6 @@ set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" }
 
 --- Utility Binds
 set("n", "<leader>L", "<CMD>Lazy<CR>", { desc = "Open Lazy" })
-set("n", "<leader>ut", "<CMD>:Themify<CR>", { desc = "Open Themify GUI" })
 set("n", "<leader>um", "<CMD>:Mason<CR>", { desc = "Open Mason" })
 set("n", "<leader>bd", "<CMD>bdelete<CR>", { desc = "Delete Buffer" })
 set("n", "<leader>bv", "<CMD>:vsplit<CR>", { desc = "vertical split" })
@@ -78,3 +78,4 @@ set("n", "<leader>t", "<CMD>ToggleTerm direction=float size=60 name=floating<CR>
 set("n", "<leader>ljs", toggle.toggle_live_server, { desc = "Toggle live server" })
 set("n", "<leader>sea", toggle.toggle_codeium, { desc = "Toggle Codeium" })
 set("n", "<leader>uB", toggle.toggle_transparency, { desc = "Toggle Transparency", noremap = true, silent = true })
+set("n", "<leader>ut", "<CMD>Themify<CR>", { desc = "Themify", noremap = true, silent = true })
