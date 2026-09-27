@@ -40,6 +40,8 @@ return {
 
 				--- Python
 				"ruff",
+				"ty",
+
 				--- JS / TS
 				"ts_ls",
 				"biome",
