@@ -39,7 +39,7 @@ return {
 				"stylua",
 
 				--- Python
-				"ruff",
+				-- "ruff",
 				"ty",
 
 				--- JS / TS
@@ -65,10 +65,10 @@ return {
 		"stevearc/conform.nvim",
 		event = "VeryLazy",
 		opts = {
-			format_on_save = {
-				timeout_ms = 500,
-				lsp_format = "fallback",
-			},
+			-- format_on_save = {
+			-- 	timeout_ms = 500,
+			-- 	lsp_format = "fallback",
+			-- },
 
 			formatters = {
 				my_formatter = {
@@ -78,14 +78,14 @@ return {
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "ruff_format" },
+				-- python = { "ruff_format" },
 				javascript = { "biome" },
 				javascriptreact = { "biome" },
 				typescript = { "biome" },
 				typescriptreact = { "biome" },
-				html = { "prettierd" },
-				json = { "prettierd" },
-				css = { "prettierd" },
+				html = { "biome" },
+				json = { "biome" },
+				css = { "biome" },
 				toml = { "taplo" },
 				yaml = { "prettierd" },
 				markdown = { "prettierd" },
